@@ -42,7 +42,7 @@ a {
   position: relative;
   font-size: 4.5rem;
   z-index: 1;
-  text-transform: capitalize;
+  text-transform:none;
   letter-spacing: 3px;
   margin: 0;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
