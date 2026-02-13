@@ -85,6 +85,28 @@ nav ul li a {
   overflow: hidden;
 }
 
+.intro {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  overflow: hidden;
+  padding: 60px;
+  max-width: 1200px;
+  margin-bottom: 3%;
+  text-align: left;
+}
+
+.Ending {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  overflow: hidden;
+  padding: 60px;
+  max-width: 1200px;
+  margin-top: 3%;
+  text-align: left;
+}
+
 /* ===================== */
 /* BAND HERO */
 /* ===================== */
