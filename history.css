@@ -6,6 +6,10 @@ body {
   color: #333;
   font-size: 1.25rem;
   scroll-padding-top: 80px; /* prevents content hiding under sticky nav */
+  background-image: url(Images/gradient.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* HERO */

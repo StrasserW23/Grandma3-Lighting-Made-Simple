@@ -7,6 +7,10 @@ body {
   background-color: #f2f2f2;
   color: #333;
   font-size: 1.25rem;
+  background-image: url(Images/gradient.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* ===================== */
@@ -108,16 +112,15 @@ nav ul li a {
 /* ===================== */
 .band-content {
   padding: 40px;
-  text-align: center;
+  text-align: left;
 }
 
 .band-content h3 {
   margin-top: 0;
+  text-align: left;
 }
 
-/* ===================== */
-/* IMAGE GRID */
-/* ===================== */
+
 .band-images {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -167,3 +170,4 @@ footer {
   }
 
 }
+
