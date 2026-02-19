@@ -106,13 +106,16 @@
 </footer>
 
  <script>
-    const currentPage = window.location.pathname.split("/").pop();
-    const navLinks = document.querySelectorAll('nav ul li a');
+    document.addEventListener("DOMContentLoaded", function() {
+      const currentPage = window.location.pathname.split("/").pop();
+      const navLinks = document.querySelectorAll('nav ul li a');
 
-    navLinks.forEach(link => {
-      if (link.getAttribute('href') === currentPage) {
-        link.classList.add('active');
-      }
+      navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        if (linkHref === currentPage || decodeURIComponent(currentPage) === linkHref) {
+          link.classList.add('active');
+        }
+      });
     });
   </script>
 

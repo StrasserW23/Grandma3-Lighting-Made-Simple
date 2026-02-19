@@ -1,4 +1,12 @@
 /* ===================== */
+/* THE YELLOW TAB FIX    */
+/* ===================== */
+nav ul li a.active {
+  color: #ffd700 !important;
+  padding-bottom: 5px;
+}
+
+/* ===================== */
 /* RESET / BASE STYLES   */
 /* ===================== */
 body {
@@ -15,7 +23,7 @@ body {
 }
 
 /* ===================== */
-/* HERO                 */
+/* HERO SECTION          */
 /* ===================== */
 .hero {
   background: url("Images/BackGround.png") no-repeat center center / cover;
@@ -43,7 +51,6 @@ body {
   font-size: 4.5rem;
   margin: 0;
   letter-spacing: 3px;
-  text-transform: none;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
@@ -97,7 +104,7 @@ nav ul li a:hover {
 }
 
 /* ===================== */
-/* MAIN CONTENT          */
+/* CONTENT LAYOUT        */
 /* ===================== */
 .container {
   padding: 40px;
@@ -105,7 +112,6 @@ nav ul li a:hover {
   margin: auto;
 }
 
-/* CONTENT ROW */
 .content-row {
   display: flex;
   gap: 30px;
@@ -120,7 +126,6 @@ nav ul li a:hover {
   margin-top: 80px;
 }
 
-/* LEFT TEXT */
 .left-text {
   flex: 2;
   text-align: left;
@@ -140,7 +145,7 @@ nav ul li a:hover {
   color: #777;
 }
 
-/* Empty-state text hint */
+/* Empty-state hint */
 .left-text h2:empty::before,
 .left-text h3:empty::before,
 .left-text p:empty::before {
@@ -150,16 +155,15 @@ nav ul li a:hover {
 }
 
 /* ===================== */
-/* RIGHT IMAGES (UPDATED) */
+/* IMAGES & GALLERY      */
 /* ===================== */
 .right-images {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Even vertical spacing */
+  justify-content: space-between;
 }
 
-/* IMAGE PLACEHOLDER */
 .img-placeholder {
   height: 180px;
   background: #ddd;
@@ -200,9 +204,6 @@ nav ul li a:hover {
   transition: transform 0.3s ease;
 }
 
-/* ===================== */
-/* GALLERY STRIP         */
-/* ===================== */
 .homepage-gallery {
   display: flex;
   justify-content: center;
@@ -211,19 +212,9 @@ nav ul li a:hover {
   flex-wrap: wrap;
 }
 
-.homepage-gallery img,
 .homepage-gallery .img-placeholder {
   width: 400px;
   height: 250px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-}
-
-.homepage-gallery img:hover,
-.homepage-gallery .img-placeholder:hover {
-  transform: scale(1.05);
 }
 
 /* ===================== */
@@ -237,16 +228,10 @@ footer {
   margin-top: 40px;
 }
 
-footer p {
-  margin: 0 0 15px;
-  font-size: 1.1rem;
-}
-
 .social-links {
   display: flex;
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap;
 }
 
 .social-links a {
@@ -254,7 +239,6 @@ footer p {
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
-  transition: color 0.3s ease;
 }
 
 .social-links a:hover {
@@ -265,63 +249,10 @@ footer p {
 /* MOBILE FIXES          */
 /* ===================== */
 @media (max-width: 768px) {
-
-  body {
-    font-size: 1.1rem;
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 0 10px;
-  }
-
-  nav ul li a {
-    font-size: 0.95rem;
-    padding: 8px 12px;
-  }
-
-  .hero {
-    height: 45vh;
-  }
-
-  .hero h1 {
-    font-size: 2.4rem;
-    letter-spacing: 2px;
-  }
-
-  .content-row {
-    flex-direction: column;
-    padding: 25px;
-    margin: 30px 15px;
-  }
-
-  .right-images {
-    flex-direction: row;
-    overflow-x: auto;
-    gap: 15px;
-    padding-bottom: 10px;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .img-placeholder {
-    min-width: 240px;
-    height: 150px;
-    flex-shrink: 0;
-  }
-
-  .homepage-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .homepage-gallery img,
-  .homepage-gallery .img-placeholder {
-    width: 90vw;
-    height: auto;
-  }
-
-  .social-links {
-    gap: 20px;
-  }
+  nav ul li a { font-size: 0.95rem; padding: 8px 12px; }
+  .hero h1 { font-size: 2.4rem; }
+  .content-row { flex-direction: column; padding: 25px; margin: 30px 15px; }
+  .right-images { flex-direction: row; overflow-x: auto; gap: 15px; }
+  .img-placeholder { min-width: 240px; height: 150px; flex-shrink: 0; }
+  .homepage-gallery .img-placeholder { width: 90vw; }
 }

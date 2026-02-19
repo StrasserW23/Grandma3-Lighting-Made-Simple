@@ -8,12 +8,11 @@
 </head>
 <body>
 
-  <!-- HERO -->
   <header class="hero">
+    <div class="overlay"></div> 
     <h1 class="fade-in">grandMA3 Above All</h1>
   </header>
 
-  <!-- NAV -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -24,16 +23,15 @@
     </ul>
   </nav>
 
-  <!-- MAIN CONTENT -->
   <main class="container fade-in">
 
-    <!-- INTRO -->
     <section class="intro">
-      <div class="introset"><h2>grandMA3 vs Vista</h2>
-      Compare the leading lighting consoles in real-world workflows and live shows. <div class="introset">
+      <div class="introset">
+        <h2>grandMA3 vs Vista</h2>
+        <p>Compare the leading lighting consoles in real-world workflows and live shows.</p>
+      </div>
     </section>
 
-    <!-- COMPARISON CARD 1 -->
     <section class="comparison-card">
       <div class="comparison-header">
         <div class="brand ma3">grandMA3</div>
@@ -41,7 +39,6 @@
         <div class="brand vista">Vista</div>
       </div>
 
-      <!-- ROW 1 -->
       <div class="comparison-row">
         <div class="comparison-col ma3">
           <div class="video-placeholder">IMAGE PLACEHOLDER</div>
@@ -53,7 +50,6 @@
         </div>
       </div>
 
-      <!-- ROW 2 -->
       <div class="comparison-row">
         <div class="comparison-col ma3">
           <div class="video-placeholder">IMAGE PLACEHOLDER</div>
@@ -66,7 +62,6 @@
       </div>
     </section>
 
-    <!-- COMPARISON CARD 2 -->
     <section class="comparison-card">
       <div class="comparison-header">
         <div class="brand ma3">grandMA3</div>
@@ -74,7 +69,6 @@
         <div class="brand vista">Vista</div>
       </div>
 
-      <!-- ROW 1 -->
       <div class="comparison-row">
         <div class="comparison-col ma3">
           <div class="image-placeholder">IMAGE PLACEHOLDER</div>
@@ -86,7 +80,6 @@
         </div>
       </div>
 
-      <!-- ROW 2 -->
       <div class="comparison-row">
         <div class="comparison-col ma3">
           <div class="image-placeholder">IMAGE PLACEHOLDER</div>
@@ -99,7 +92,6 @@
       </div>
     </section>
 
-    <!-- COMPARISON CARD 3 -->
     <section class="comparison-card">
       <div class="comparison-header">
         <div class="brand ma3">grandMA3</div>
@@ -107,7 +99,6 @@
         <div class="brand vista">Vista</div>
       </div>
 
-      <!-- ROW 1 -->
       <div class="comparison-row">
         <div class="comparison-col ma3">
           <div class="video-placeholder">IMAGE PLACEHOLDER</div>
@@ -119,7 +110,6 @@
         </div>
       </div>
 
-      <!-- ROW 2 -->
       <div class="comparison-row">
         <div class="comparison-col ma3">
           <div class="video-placeholder">IMAGE PLACEHOLDER</div>
@@ -134,22 +124,25 @@
 
   </main>
 
- <!-- FOOTER -->
-<footer>
-  <p>&copy; 2025 grandMA3: Lighting Made Simple. All rights reserved.</p>
-  <div class="social-links">
-    <a href="https://www.instagram.com/strasser_will23/" target="_blank">Instagram</a>
-    <a href="https://www.linkedin.com/in/strasserwill23" target="_blank">LinkedIn</a>
-  </div>
-</footer>
+  <footer>
+    <p>&copy; 2025 grandMA3: Lighting Made Simple. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/strasser_will23/" target="_blank">Instagram</a>
+      <a href="https://www.linkedin.com/in/strasserwill23" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
 
-<script>
-    const currentPage = window.location.pathname.split("/").pop();
-    const navLinks = document.querySelectorAll('nav ul li a');
-    navLinks.forEach(link => {
-      if (link.getAttribute('href') === currentPage) {
-        link.classList.add('active');
-      }
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const currentPage = window.location.pathname.split("/").pop();
+      const navLinks = document.querySelectorAll('nav ul li a');
+
+      navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        if (linkHref === currentPage || decodeURIComponent(currentPage) === linkHref) {
+          link.classList.add('active');
+        }
+      });
     });
   </script>
 
