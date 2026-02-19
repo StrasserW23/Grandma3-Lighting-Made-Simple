@@ -1,18 +1,22 @@
+/* ===================== */
 /* RESET / BASE */
+/* ===================== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
   color: #333;
   font-size: 1.25rem;
-  scroll-padding-top: 80px; /* prevents content hiding under sticky nav */
+  scroll-padding-top: 80px;
   background-image: url(Images/gradient.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 
+/* ===================== */
 /* HERO */
+/* ===================== */
 .hero {
   background: url("Images/BackGround.png") no-repeat center center / cover;
   height: 60vh;
@@ -39,28 +43,25 @@ body {
   font-size: 4.5rem;
   margin: 0;
   letter-spacing: 3px;
-  text-transform: none;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
-/* FADE IN */
+/* ===================== */
+/* FADE-IN ANIMATION */
+/* ===================== */
 .fade-in {
   opacity: 0;
   animation: fadeIn 2.5s ease forwards;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* NAV (STICKY FIXED) */
+/* ===================== */
+/* NAVIGATION */
+/* ===================== */
 nav {
   background-color: #222;
   padding: 15px 0;
@@ -94,17 +95,22 @@ nav ul li a:hover {
   color: #ffd700;
 }
 
-/* MAIN CONTENT CONTAINER */
-.container {
-  padding: 40px;
-  text-align: center;
+/* ===================== */
+/* ACTIVE TAB HIGHLIGHT */
+/* ===================== */
+nav ul li a.active {
+  color: #ffd700;
 }
 
-.container h2 {
-  font-size: 2.2em;
+nav ul li a.active:hover {
+  color: #ffd700;
+  background-color: #444;
+  border-radius: 6px;
 }
 
-/* FLEX CONTENT SECTION (GRANDMA BOX) */
+/* ===================== */
+/* CONTENT ROW / FLEXBOX */
+/* ===================== */
 .content-row {
   display: flex;
   gap: 30px;
@@ -114,12 +120,9 @@ nav ul li a:hover {
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  
-  /* MOVEMENT SYNC */
   transition: transform 0.3s ease;
 }
 
-/* THE HOVER MOVEMENT - NO SIZE CHANGE */
 .content-row:hover {
   transform: translateY(-5px);
 }
@@ -150,40 +153,14 @@ nav ul li a:hover {
 
 .img-placeholder {
   height: 180px;
-  background: #ddd;
   border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: #666;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-/* GALLERY */
-.homepage-gallery {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 50px 0;
-  flex-wrap: wrap;
-}
-
-.homepage-gallery img {
-  width: 400px;
-  height: 250px;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-  cursor: pointer;
 }
 
-.homepage-gallery img:hover {
-  transform: scale(1.05);
-}
-
+/* ===================== */
 /* FOOTER */
+/* ===================== */
 footer {
   background-color: #222;
   color: white;
@@ -217,16 +194,13 @@ footer p {
 }
 
 /* ===================== */
-/* RESPONSIVE / MOBILE FIX */
+/* RESPONSIVE / MOBILE */
 /* ===================== */
 @media (max-width: 768px) {
-
-  body {
-    font-size: 1.1rem;
-  }
+  body { font-size: 1.1rem; }
 
   nav ul {
-    flex-direction: row; 
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
     padding: 0 10px;
@@ -258,27 +232,11 @@ footer p {
     overflow-x: auto;
     gap: 15px;
     padding-bottom: 10px;
-    -webkit-overflow-scrolling: touch;
   }
 
   .img-placeholder {
     min-width: 220px;
     height: 140px;
     flex-shrink: 0;
-  }
-
-  .homepage-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .homepage-gallery img {
-    width: 90vw;
-    height: auto;
-  }
-
-  .social-links {
-    flex-direction: row;
-    gap: 20px;
   }
 }

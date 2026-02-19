@@ -17,7 +17,7 @@
   <!-- NAV -->
   <nav>
     <ul>
-      <li><a href="index.html">Welcome</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="history.html">History</a></li>
       <li><a href="above all.html">Above All</a></li>
       <li><a href="in action.html">In Action</a></li>
@@ -35,7 +35,7 @@
         <p>In grandMA3, a phaser is a dynamic tool used to create movement, color chases, and automated repeating effects by cycling through two or more steps. Unlike static presets, which contain only a single step, phasers run multi-step sequences. This allows you to control parameters such as speed, phase, width, and transitions—enabling the creation of intricate, evolving lighting designs.</p>
 
         <h3>Effects</h3>
-<p> A <b>fly-out</b> is when lights move quickly from one position to another, usually outward or away from a focal point. On stage, beams often begin centered on an artist and then suddenly “fly” outward across the stage or into the audience, creating a strong sense of energy and expansion. In grandMA3, this effect is typically created using position presets combined with a movement effect—often a one-shot or short effect—and fast transition timing. Fly-outs are commonly used during big musical hits or drops, especially in dramatic stadium rock moments.</p>
+<p><b>Fly-Out:</b> A is when lights move quickly from one position to another, usually outward or away from a focal point. On stage, beams often begin centered on an artist and then suddenly “fly” outward across the stage or into the audience, creating a strong sense of energy and expansion. In grandMA3, this effect is typically created using position presets combined with a movement effect—often a one-shot or short effect—and fast transition timing. Fly-outs are commonly used during big musical hits or drops, especially in dramatic stadium rock moments.</p>
 
 <p><b>Figure 8s:</b> A movement pattern in which a moving head fixture traces the shape of the number 8. On stage, this creates a smooth, looping motion that feels dynamic without being chaotic, making it ideal for songs that need a sense of flow. In grandMA3, this effect is built using a position effect with X and Y phase offsets, typically using sine wave shapes with adjusted width and speed. Because grandMA3 features a powerful effects engine, you can precisely control the size of the 8, the speed, and the phase relationship between fixtures. This effect is especially common in worship environments, such as at Rivers Crossing, and works well for mid-tempo songs.</p>
 
@@ -74,7 +74,7 @@
 
 <li><b>Gobo Morph</b> – Transitions between gobos (on some fixtures)</li>
 
-<p>These controls live in the fixture’s attribute encoder pages (usually under Beam).</p>
+<p>These controls live in the fixture’s attribute encoder pages.</p>
 
       </div>
 
@@ -104,6 +104,17 @@
     <a href="https://www.linkedin.com/in/strasserwill23" target="_blank">LinkedIn</a>
   </div>
 </footer>
+
+ <script>
+    const currentPage = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  </script>
 
 </body>
 </html>

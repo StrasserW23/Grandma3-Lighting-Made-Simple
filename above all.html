@@ -16,7 +16,7 @@
   <!-- NAV -->
   <nav>
     <ul>
-      <li><a href="index.html">Welcome</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="history.html">History</a></li>
       <li><a href="above all.html">Above All</a></li>
       <li><a href="in action.html">In Action</a></li>
@@ -142,6 +142,16 @@
     <a href="https://www.linkedin.com/in/strasserwill23" target="_blank">LinkedIn</a>
   </div>
 </footer>
+
+<script>
+    const currentPage = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  </script>
 
 </body>
 </html>

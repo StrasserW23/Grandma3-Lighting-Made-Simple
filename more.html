@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="more.css">
 </head>
-
 <body>
 
   <header class="hero">
@@ -15,11 +14,11 @@
 
   <nav>
     <ul>
-      <li><a href="index.html">Welcome</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="history.html">History</a></li>
       <li><a href="above all.html">Above All</a></li>
       <li><a href="in action.html">In Action</a></li>
-      <li><a href="more.html" class="active">More</a></li>
+      <li><a href="more.html">More</a></li>
     </ul>
   </nav>
 
@@ -70,7 +69,7 @@
           <div class="band-images">
             <img src="Images/new/tso1.avif" alt="TSO Stage Lighting 1">
             <img src="Images/new/ts02.jpg" alt="TSO Stage Lighting 2">
-            <img src="Images/new/tso3.webp" alt="TSO Stage Lighting 3">
+            <img src="Images/new/ts03.webp" alt="TSO Stage Lighting 3">
           </div>
         </div>
       </div>
@@ -153,6 +152,17 @@
       <a href="https://www.linkedin.com/in/strasserwill23" target="_blank">LinkedIn</a>
     </div>
   </footer>
+
+  <!-- JS to auto-highlight active nav link -->
+  <script>
+    const currentPage = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  </script>
 
 </body>
 </html>

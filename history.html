@@ -15,7 +15,7 @@
   <!-- NAV -->
   <nav>
     <ul>
-      <li><a href="index.html">Welcome</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="history.html">History</a></li>
       <li><a href="above all.html">Above All</a></li>
       <li><a href="in action.html">In Action</a></li>
@@ -25,66 +25,66 @@
 
   <!-- CONTENT -->
   <section class="content-row">
-
     <!-- LEFT TEXT -->
     <div class="left-text">
       <h2>Based on the strong backbone of previous grandMA consoles...</h2>
-
       <p>
         Based on the strong backbone of previous grandMA consoles, the grandMA3 is a revolutionary
         re-invention of the lighting control platform.
       </p>
-
       <p>
         By incorporating fresh thinking from some of the industry's top minds, the grandMA3 introduces
         a more logical and intuitive user interface.
       </p>
-
       <h3>Optimized for the User Experience</h3>
       <p>
         The physical shape of the grandMA3 family is stunning, with the focus on delivering the best
         experience possible today and tomorrow.
       </p>
-
       <p>
         <strong>Huge Screen Real Estate:</strong> Massive multi-touch screens give you total control.
       </p>
-
       <h3>Work Without Boundaries</h3>
       <p>
         The grandMA3 breaks LAN limitations with powerful WAN capabilities. LAN vs. WAN: The high-performance, real-time DMX output (MA-Net3) still requires a dedicated 1 Gbit/s LAN, but the console's overall system management can leverage WAN. 
       </p>
-
       <h3>LAN vs. WAN</h3>
-
-<p>LAN (Local Area Network) = fast, short-distance communication
-→ like talking to someone in the same room</p>
-
-<p>WAN (Wide Area Network) = long-distance communication
-→ like talking to someone over the internet</p>
-
+      <p>LAN (Local Area Network) = fast, short-distance communication → like talking to someone in the same room</p>
+      <p>WAN (Wide Area Network) = long-distance communication → like talking to someone over the internet</p>
       <h3>Real-World Fixtures & Open Standards</h3>
       <p>
         <strong>Native GDTF Support</strong> and seamless MVR integration.
       </p>
     </div>
 
+    <!-- RIGHT IMAGES -->
     <div class="right-images">
-  <img src="Images/cwing.jpeg" alt="GrandMA3 Lighting Console" class="img-placeholder">
-  <img src="Images/lite.jpeg" alt="GrandMA3 Lighting Console" class="img-placeholder">
-  <img src="Images/full.jpeg" alt="GrandMA3 Lighting Console" class="img-placeholder">
-</div>
-
+      <img src="Images/cwing.jpeg" alt="GrandMA3 Lighting Console" class="img-placeholder">
+      <img src="Images/lite.jpeg" alt="GrandMA3 Lighting Console" class="img-placeholder">
+      <img src="Images/full.jpeg" alt="GrandMA3 Lighting Console" class="img-placeholder">
+    </div>
   </section>
 
   <!-- FOOTER -->
-<footer>
-  <p>&copy; 2025 grandMA3: Lighting Made Simple. All rights reserved.</p>
-  <div class="social-links">
-    <a href="https://www.instagram.com/strasser_will23/" target="_blank">Instagram</a>
-    <a href="https://www.linkedin.com/in/strasserwill23" target="_blank">LinkedIn</a>
-  </div>
-</footer>
+  <footer>
+    <p>&copy; 2025 grandMA3: Lighting Made Simple. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/strasser_will23/" target="_blank">Instagram</a>
+      <a href="https://www.linkedin.com/in/strasserwill23" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <!-- JS to highlight current tab -->
+  <script>
+    const currentPage = decodeURIComponent(window.location.pathname.split("/").pop());
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  </script>
 
 </body>
 </html>

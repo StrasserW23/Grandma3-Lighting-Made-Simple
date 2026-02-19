@@ -46,13 +46,10 @@ a {
   position: relative;
   font-size: 4.5rem;
   z-index: 1;
-  text-transform:none;
   letter-spacing: 3px;
   margin: 0;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
-
-
 
 /* FADE-IN ANIMATION */
 .fade-in {
@@ -66,7 +63,7 @@ a {
 }
 
 /* ===================== */
-/* NAVIGATION (STICKY TAB BAR) */
+/* NAVIGATION */
 /* ===================== */
 nav {
   background-color: #222;
@@ -87,7 +84,6 @@ nav ul {
 }
 
 nav ul li a {
-  text-decoration: none;
   color: white;
   font-size: 1.3rem;
   font-weight: bold;
@@ -95,14 +91,26 @@ nav ul li a {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* Hover effect */
 nav ul li a:hover {
   background-color: #444;
   border-radius: 6px;
   color: #ffd700;
 }
 
+/* ACTIVE TAB (STAYS YELLOW) */
+nav ul li a.active {
+  color: #ffd700;
+}
+
+nav ul li a.active:hover {
+  color: #ffd700;
+  background-color: #444;
+  border-radius: 6px;
+}
+
 /* ===================== */
-/* SHOWCASE SECTION - UPDATED WITH MOVEMENT */
+/* SHOWCASE SECTION */
 /* ===================== */
 .showcase-wrapper {
   display: flex;
@@ -117,13 +125,10 @@ nav ul li a:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   max-width: 1000px;
   width: 100%;
-  
-  /* MOVEMENT SYNC */
   transition: transform 0.3s ease;
 }
 
 .showcase-box:hover {
-  /* Exactly like .band-card:hover */
   transform: translateY(-5px);
 }
 
@@ -143,11 +148,6 @@ nav ul li a:hover {
   font-size: 1.2rem;
   margin-top: 20px;
   line-height: 2;
-}
-
-.discover-items span {
-  display: inline-block;
-  margin: 0 15px;
 }
 
 /* ===================== */
@@ -181,21 +181,6 @@ nav ul li a:hover {
 }
 
 /* ===================== */
-/* BAND CARDS (ED SHEERAN STYLE) */
-/* ===================== */
-.band-card {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.band-card:hover {
-  transform: translateY(-5px);
-}
-
-/* ===================== */
 /* FOOTER */
 /* ===================== */
 footer {
@@ -219,7 +204,6 @@ footer p {
 }
 
 .social-links a {
-  text-decoration: none;
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
@@ -231,27 +215,22 @@ footer p {
 }
 
 /* ===================== */
-/* MOBILE RESPONSIVE */
+/* MOBILE */
 /* ===================== */
 @media (max-width: 768px) {
   nav ul {
-    flex-direction: row; 
-    flex-wrap: wrap;    
-    gap: 10px;          
+    flex-wrap: wrap;
+    gap: 10px;
     padding: 0 10px;
   }
 
   nav ul li a {
-    font-size: 1rem;    
-    padding: 8px 12px;  
+    font-size: 1rem;
+    padding: 8px 12px;
   }
 
   .hero h1 {
     font-size: 2.5rem;
-  }
-
-  .showcase-box {
-    padding: 20px;
   }
 
   .homepage-gallery img {
