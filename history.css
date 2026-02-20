@@ -95,17 +95,8 @@ nav ul li a:hover {
   color: #ffd700;
 }
 
-/* ===================== */
-/* ACTIVE TAB HIGHLIGHT */
-/* ===================== */
 nav ul li a.active {
   color: #ffd700;
-}
-
-nav ul li a.active:hover {
-  color: #ffd700;
-  background-color: #444;
-  border-radius: 6px;
 }
 
 /* ===================== */
@@ -113,49 +104,101 @@ nav ul li a.active:hover {
 /* ===================== */
 .content-row {
   display: flex;
-  gap: 30px;
+  gap: 60px;
   max-width: 1200px;
   margin: 40px auto;
+  padding: 0 20px; 
+  align-items: stretch;
+}
+
+/* LEFT TEXT (The White Box) */
+.left-text {
+  flex: 2;
+  text-align: left;
   background: white;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
 }
 
-.content-row:hover {
-  transform: translateY(-5px);
+.intro-lead {
+  font-size: 1.4rem;
+  color: #444;
+  margin-bottom: 25px;
+  line-height: 1.4;
 }
 
-/* LEFT TEXT */
-.left-text {
-  flex: 2;
-  text-align: left;
+.section-divider {
+  border: 0;
+  height: 1px;
+  background: #eee;
+  margin: 30px 0;
 }
 
-.left-text h2 {
-  font-size: 2.2rem;
-  margin-top: 0;
+.feature-item h3 {
+  color: #222;
+  border-left: 5px solid #ffd700;
+  padding-left: 15px;
+  margin-top: 25px;
 }
 
-.left-text h3 {
-  margin-top: 30px;
-  color: #555;
+.tech-specs {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #edecec;
+  font-size: 1.1rem;
+  margin-top: 15px;
 }
 
-/* RIGHT IMAGES */
+.tech-specs h4 {
+  margin: 0 0 10px 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #888;
+}
+
+/* RIGHT IMAGES (Floating) */
 .right-images {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: space-between; 
+  gap: 40px;
+}
+
+.image-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-label {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: bold;
+  color: #ffd700; 
+  background: rgba(0, 0, 0, 0.8); /* High contrast dark pill */
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .img-placeholder {
-  height: 180px;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.img-placeholder:hover {
+  transform: scale(1.05);
 }
 
 /* ===================== */
@@ -169,11 +212,6 @@ footer {
   margin-top: 40px;
 }
 
-footer p {
-  margin: 0 0 15px;
-  font-size: 1.1rem;
-}
-
 .social-links {
   display: flex;
   justify-content: center;
@@ -184,7 +222,6 @@ footer p {
 .social-links a {
   text-decoration: none;
   color: white;
-  font-size: 1.2rem;
   font-weight: bold;
   transition: color 0.3s ease;
 }
@@ -197,46 +234,11 @@ footer p {
 /* RESPONSIVE / MOBILE */
 /* ===================== */
 @media (max-width: 768px) {
-  body { font-size: 1.1rem; }
-
-  nav ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 0 10px;
+  .content-row { flex-direction: column; }
+  .right-images { 
+    flex-direction: row; 
+    overflow-x: auto; 
+    padding: 20px 0;
   }
-
-  nav ul li a {
-    font-size: 1rem;
-    padding: 8px 12px;
-  }
-
-  .hero {
-    height: 45vh;
-    padding: 20px;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-  }
-
-  .content-row {
-    flex-direction: column;
-    padding: 25px;
-    margin: 15px;
-  }
-
-  .right-images {
-    flex-direction: row;
-    overflow-x: auto;
-    gap: 15px;
-    padding-bottom: 10px;
-  }
-
-  .img-placeholder {
-    min-width: 220px;
-    height: 140px;
-    flex-shrink: 0;
-  }
+  .image-item { min-width: 280px; }
 }

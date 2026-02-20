@@ -3,18 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>grandMA3: In Action</title>
-  <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="in action.css">
 </head>
 <body>
 
-  <!-- HERO -->
   <header class="hero">
     <div class="overlay"></div>
     <h1 class="fade-in">grandMA3 In Action</h1>
   </header>
 
-  <!-- NAV -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -25,99 +22,103 @@
     </ul>
   </nav>
 
-  <!-- MAIN CONTENT -->
   <main class="container">
 
-    <!-- SECTION 1 -->
     <section class="content-row">
       <div class="left-text">
-        <h2>Phasers</h2>
-        <p>In grandMA3, a phaser is a dynamic tool used to create movement, color chases, and automated repeating effects by cycling through two or more steps. Unlike static presets, which contain only a single step, phasers run multi-step sequences. This allows you to control parameters such as speed, phase, width, and transitions—enabling the creation of intricate, evolving lighting designs.</p>
+        <h2>Phasers & Effects</h2>
+        <p class="intro-lead">In grandMA3, a phaser is a dynamic tool used to create movement, color chases, and automated repeating effects.</p>
+        
+        <hr class="section-divider">
 
-        <h3>Effects</h3>
-<p><b>Fly-Out:</b> A is when lights move quickly from one position to another, usually outward or away from a focal point. On stage, beams often begin centered on an artist and then suddenly “fly” outward across the stage or into the audience, creating a strong sense of energy and expansion. In grandMA3, this effect is typically created using position presets combined with a movement effect—often a one-shot or short effect—and fast transition timing. Fly-outs are commonly used during big musical hits or drops, especially in dramatic stadium rock moments.</p>
-
-<p><b>Figure 8s:</b> A movement pattern in which a moving head fixture traces the shape of the number 8. On stage, this creates a smooth, looping motion that feels dynamic without being chaotic, making it ideal for songs that need a sense of flow. In grandMA3, this effect is built using a position effect with X and Y phase offsets, typically using sine wave shapes with adjusted width and speed. Because grandMA3 features a powerful effects engine, you can precisely control the size of the 8, the speed, and the phase relationship between fixtures. This effect is especially common in worship environments, such as at Rivers Crossing, and works well for mid-tempo songs.</p>
-
-<p><b>Circles:</b> A circle is a movement pattern in which lights move in a continuous circular motion. On stage, this creates smooth, orbiting beams that can be programmed to feel tight and subtle or wide and dramatic, depending on the size and speed. In grandMA3, you create this effect using a position effect, applying a sine wave to the X parameter and a cosine wave to the Y parameter, then adjusting the phase to spread the fixtures evenly. Circles tend to feel cleaner and more predictable than figure 8s, making them a versatile and controlled movement choice.</p>
-
-  <p><b>Chase:</b> A chase is when lights turn on and off in sequence, creating the effect of movement across the stage. Visually, it looks like lights “running” from one fixture to the next, adding rhythm and momentum—often associated with classic rock looks or high-energy EDM builds. In grandMA3, a chase can be created using step-based sequences, cue timing, or a dimmer effect with phase spread. You can apply chases to dimmer, color, position, or beam effects. Because chases rely heavily on timing, they are highly musical and closely tied to the rhythm of the song.</p>
-
-<p><b>Dimus:</b> A dimmer effect controls the brightness of fixtures. On stage, it creates looks such as pulsing, flashing, breathing effects, and strobes, adding intensity and rhythmic energy to a design. In grandMA3, dimmer effects are created using built-in dimmer effects combined with different waveforms—such as sine, square, or ramp—and can be adjusted using speed masters for precise timing control. Dimmer effects are some of the most powerful tools for matching music energy — especially in high-impact songs.</p>
-
+        <div class="feature-grid">
+          <div class="feature-item">
+            <h3>Fly-Outs & Circles</h3>
+            <p><strong>Fly-Out:</strong> Fast movements from center to audience, creating energy. Typically a one-shot movement effect.</p>
+            <p><strong>Circles:</strong> Continuous circular motion using Sine/Cosine waves for a clean, predictable flow.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Movement & Dimmer</h3>
+            <p><strong>Figure 8s:</strong> Dynamic looping motion created via X/Y phase offsets. Ideal for mid-tempo flow.</p>
+            <p><strong>Dimus:</strong> Rhythmic brightness control (pulsing, strobing) using Speed Masters for precise timing.</p>
+          </div>
+        </div>
       </div>
 
       <div class="right-images">
-        <div class="img-placeholder">Dimus Video</div>
-        <div class="img-placeholder">Flyout Video</div>
-        <div class="img-placeholder">Strobe Video</div>
+        <div class="image-item">
+          <div class="img-placeholder">Dimus Video</div>
+          <span class="img-label">Dimmer Effects</span>
+        </div>
+        <div class="image-item">
+          <div class="img-placeholder">Flyout Video</div>
+          <span class="img-label">Movement</span>
+        </div>
       </div>
     </section>
 
-    <!-- SECTION 2 -->
     <section class="content-row">
       <div class="left-text">
-        <h2>Gobos</h2>
-        <p>In grandMA3 you don’t physically insert gobos — you control them digitally by adjusting fixture parameters:</p>
+        <h2>Gobo Control</h2>
+        <p class="intro-lead">Gobos (Goes Between Optics) project patterns and textures. In grandMA3, these are controlled digitally via attribute encoders.</p>
 
-         <p>A gobo is a small, stenciled, or etched metal or glass disc placed inside a lighting fixture to project patterns, images, or logos onto surfaces. </p>
-          
-        <P>Standing for "Goes Between Optics" (or "Go Before Optics"), it acts as a template to shape light for theatrical, corporate, or event design. </p>
+        <hr class="section-divider">
 
-<li><b>Selection</b> – Chooses which pattern is active</li>
-
-<li><b>Gobo Rotation</b> – Spins the pattern</li>
-
-<li><b>Gobo Indexing</b> – Locks the gobo at a precise angle</li>
-
-<li><b>Gobo Shake</b> – Adds a vibration/shimmer effect</li>
-
-<li><b>Gobo Morph</b> – Transitions between gobos (on some fixtures)</li>
-
-<p>These controls live in the fixture’s attribute encoder pages.</p>
-
+        <div class="feature-grid">
+          <div class="feature-item">
+            <h3>Core Attributes</h3>
+            <ul class="reflow-list">
+              <li><strong>Selection:</strong> Choose the active pattern from the wheel.</li>
+              <li><strong>Rotation:</strong> Continuous spinning of the disc.</li>
+              <li><strong>Indexing:</strong> Locking the pattern at a specific static angle.</li>
+            </ul>
+          </div>
+          <div class="feature-item">
+            <h3>Advanced Texture</h3>
+            <ul class="reflow-list">
+              <li><strong>Gobo Shake:</strong> Adds a vibration or shimmer to the light.</li>
+              <li><strong>Gobo Morph:</strong> Transitions between two gobo wheels.</li>
+            </ul>
+            <div class="tech-specs">
+              <h4>Note:</h4>
+              <p>These controls are located within the fixture's <strong>Beam</strong> attribute encoder pages.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="right-images">
-        <div class="homepage-gallery">
-      <img src="Images/new/gobo.webp" alt="Stage Lighting 1">
-      <img src="Images/new/GoboL.png" alt="Stage Lighting 2">
-      <img src="Images/new/gobob.png" alt="Stage Lighting 3">
-    </div>
+        <div class="image-item">
+          <img src="Images/new/gobo.webp" alt="Gobo pattern" class="img-placeholder">
+          <span class="img-label">Pattern Selection</span>
+        </div>
+        <div class="image-item">
+          <img src="Images/new/GoboL.png" alt="Gobo look" class="img-placeholder">
+          <span class="img-label">Visual Indexing</span>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- GALLERY STRIP -->
-  <section class="homepage-gallery fade-in">
-    <div class="img-placeholder">Gallery Image</div>
-    <div class="img-placeholder">Gallery Image</div>
-    <div class="img-placeholder">Gallery Image</div>
-  </section>
+  <footer>
+    <p>&copy; 2025 grandMA3: Lighting Made Simple. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/strasser_will23/" target="_blank">Instagram</a>
+      <a href="https://www.linkedin.com/in/strasserwill23" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
 
-  <!-- FOOTER -->
-<footer>
-  <p>&copy; 2025 grandMA3: Lighting Made Simple. All rights reserved.</p>
-  <div class="social-links">
-    <a href="https://www.instagram.com/strasser_will23/" target="_blank">Instagram</a>
-    <a href="https://www.linkedin.com/in/strasserwill23" target="_blank">LinkedIn</a>
-  </div>
-</footer>
-
- <script>
+  <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const currentPage = window.location.pathname.split("/").pop();
+      const currentPage = window.location.pathname.split("/").pop() || "index.html";
       const navLinks = document.querySelectorAll('nav ul li a');
-
       navLinks.forEach(link => {
-        const linkHref = link.getAttribute('href');
-        if (linkHref === currentPage || decodeURIComponent(currentPage) === linkHref) {
+        if (link.getAttribute('href') === currentPage) {
           link.classList.add('active');
         }
       });
     });
   </script>
-
 </body>
 </html>
