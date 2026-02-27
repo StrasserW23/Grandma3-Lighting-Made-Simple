@@ -1,14 +1,8 @@
-/* ===================== */
-/* THE YELLOW TAB FIX */
-/* ===================== */
 nav ul li a.active {
   color: #ffd700 !important;
   padding-bottom: 5px;
 }
 
-/* ===================== */
-/* PAGE LAYOUT & INTRO */
-/* ===================== */
 .container {
   max-width: 1200px;
   margin: auto;
@@ -24,9 +18,6 @@ nav ul li a.active {
   text-align: center;
 }
 
-/* ===================== */
-/* COMPARISON CARDS */
-/* ===================== */
 .comparison-card {
   background: white;
   border-radius: 14px;
@@ -65,26 +56,30 @@ nav ul li a.active {
 .comparison-col.ma3 { background: #fffdf3; font-weight: bold; }
 .comparison-col.vista { background: #f7f7f7; }
 
-/* ===================== */
-/* PLACEHOLDERS */
-/* ===================== */
-.image-placeholder, .video-placeholder {
-  height: 220px;
+.image-placeholder,
+.video-placeholder {
+  height: 260px;
   background: #d9d9d9;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666;
-  font-weight: bold;
+  overflow: hidden;
   transition: transform 0.3s ease;
   cursor: pointer;
 }
 
-.video-placeholder { height: 260px; background: #cfcfcf; }
-
-.image-placeholder:hover, .video-placeholder:hover {
+.image-placeholder:hover,
+.video-placeholder:hover {
   transform: scale(1.05);
+}
+
+.image-placeholder img,
+.video-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .caption {
@@ -92,7 +87,6 @@ nav ul li a.active {
   font-weight: bold;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .comparison-row { grid-template-columns: 1fr; }
   .brand.vs { display: none; }
