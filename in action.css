@@ -265,3 +265,165 @@ footer {
     height: 150px;
   }
 }
+
+/* ===================== */
+/* TABLET RESPONSIVE */
+/* ===================== */
+@media (max-width: 1024px) {
+
+  .hero {
+    height: 50vh;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    padding: 0 20px;
+  }
+
+  nav ul {
+    gap: 25px;
+  }
+
+  nav ul li a {
+    font-size: 1.1rem;
+    padding: 8px 16px;
+  }
+
+  .container {
+    padding: 30px;
+  }
+
+  .content-row {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .left-text {
+    padding: 35px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .right-images {
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+
+  .image-item {
+    width: 45%;
+    min-width: 250px;
+  }
+
+  .img-placeholder,
+  .video-placeholder {
+    height: 180px;
+  }
+
+}
+
+
+/* ===================== */
+/* MOBILE PHONES */
+/* ===================== */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 1rem;
+  }
+
+  .hero {
+    height: 40vh;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    padding: 0 15px;
+  }
+
+  /* NAVIGATION WRAP */
+  nav ul {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  nav ul li a {
+    font-size: 0.95rem;
+    padding: 6px 10px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .content-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .left-text {
+    padding: 25px;
+  }
+
+  .intro-lead {
+    font-size: 1.1rem;
+  }
+
+  .feature-item h3 {
+    font-size: 1.15rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* HORIZONTAL MEDIA SCROLL */
+  .right-images {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px;
+  }
+
+  .image-item {
+    min-width: 240px;
+  }
+
+  .img-placeholder,
+  .video-placeholder {
+    height: 150px;
+  }
+
+}
+
+
+/* ===================== */
+/* SMALL PHONES */
+/* ===================== */
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul li a {
+    font-size: 0.85rem;
+  }
+
+  .left-text {
+    padding: 20px;
+  }
+
+  .intro-lead {
+    font-size: 1rem;
+  }
+
+  .image-item {
+    min-width: 200px;
+  }
+
+}

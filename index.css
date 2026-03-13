@@ -238,3 +238,119 @@ footer p {
     height: auto;
   }
 }
+
+/* ===================== */
+/* TABLET (iPads, small laptops) */
+/* ===================== */
+@media (max-width: 1024px) {
+
+  .hero {
+    height: 50vh;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    padding: 0 20px;
+  }
+
+  nav ul {
+    gap: 25px;
+  }
+
+  nav ul li a {
+    font-size: 1.1rem;
+    padding: 8px 16px;
+  }
+
+  .showcase-wrapper {
+    padding: 30px 20px;
+  }
+
+  .showcase-box {
+    padding: 30px;
+  }
+
+  .homepage-gallery img {
+    width: 320px;
+    height: 220px;
+  }
+
+}
+
+
+/* ===================== */
+/* MOBILE (Phones) */
+/* ===================== */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 1rem;
+  }
+
+  .hero {
+    height: 40vh;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    padding: 0 15px;
+  }
+
+  /* NAVIGATION WRAPS */
+  nav ul {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  nav ul li a {
+    font-size: 0.95rem;
+    padding: 6px 10px;
+  }
+
+  /* SHOWCASE */
+  .showcase-box {
+    padding: 25px;
+  }
+
+  .discover-items {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  /* GALLERY STACK */
+  .homepage-gallery {
+    gap: 20px;
+    padding: 30px 0;
+  }
+
+  .homepage-gallery img {
+    width: 95vw;
+    height: auto;
+  }
+
+}
+
+
+/* ===================== */
+/* SMALL PHONES */
+/* ===================== */
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul li a {
+    font-size: 0.85rem;
+  }
+
+  .showcase-box {
+    padding: 20px;
+  }
+
+  .discover-items {
+    font-size: 0.95rem;
+  }
+
+}

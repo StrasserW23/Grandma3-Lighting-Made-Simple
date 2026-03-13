@@ -219,3 +219,145 @@ footer {
   .comparison-row { grid-template-columns: 1fr; }
   .brand.vs { display: none; }
 }
+
+/* ===================== */
+/* TABLET RESPONSIVE */
+/* ===================== */
+@media (max-width: 1024px) {
+
+  .hero {
+    height: 50vh;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    padding: 0 20px;
+  }
+
+  nav ul {
+    gap: 25px;
+  }
+
+  nav ul li a {
+    font-size: 1.1rem;
+    padding: 8px 16px;
+  }
+
+  .container {
+    padding: 30px;
+  }
+
+  .comparison-header {
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .brand {
+    font-size: 1.3rem;
+  }
+
+  .comparison-col {
+    padding: 25px;
+  }
+
+  .image-placeholder,
+  .video-placeholder {
+    height: 220px;
+  }
+
+}
+
+
+/* ===================== */
+/* MOBILE PHONES */
+/* ===================== */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 1rem;
+  }
+
+  .hero {
+    height: 40vh;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    padding: 0 15px;
+  }
+
+  /* NAVIGATION WRAPS */
+  nav ul {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  nav ul li a {
+    font-size: 0.95rem;
+    padding: 6px 10px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .introset {
+    padding: 25px;
+  }
+
+  /* STACK COMPARISON */
+  .comparison-row {
+    grid-template-columns: 1fr;
+  }
+
+  .brand.vs {
+    display: none;
+  }
+
+  .comparison-col {
+    padding: 20px;
+  }
+
+  .image-placeholder,
+  .video-placeholder {
+    height: 180px;
+  }
+
+  .caption {
+    font-size: 0.95rem;
+  }
+
+}
+
+
+/* ===================== */
+/* SMALL PHONES */
+/* ===================== */
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul li a {
+    font-size: 0.85rem;
+  }
+
+  .introset {
+    padding: 20px;
+  }
+
+  .comparison-col {
+    padding: 18px;
+  }
+
+  .image-placeholder,
+  .video-placeholder {
+    height: 150px;
+  }
+
+  .caption {
+    font-size: 0.9rem;
+  }
+
+}
