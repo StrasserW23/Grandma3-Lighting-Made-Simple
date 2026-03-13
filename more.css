@@ -195,37 +195,97 @@ footer .social-links a:hover {
   .video-wrapper iframe { height: 450px; }
 }
 
-/* ===================== */
-/* MOBILE / PHONES (≤768px) */
-/* ===================== */
 @media (max-width: 768px) {
-  body { font-size: 1rem; }
-  .hero { height: 40vh; }
-  .hero h1 { font-size: 2.2rem; }
 
-  nav ul { flex-wrap: wrap; gap: 10px; padding: 10px; }
-  nav ul li a { font-size: 0.95rem; }
+  body {
+    font-size: 1rem;
+  }
 
-  .container { padding: 0 15px; gap: 40px; }
-  .intro, .Ending { padding: 30px; }
-  .band-content { padding: 25px; }
-  .band-hero { font-size: 2.3rem; height: 130px; }
+  .hero {
+    height: 40vh;
+  }
 
-  .band-images { grid-template-columns: 1fr; }
-  .band-images img { height: 220px; }
+  .hero h1 {
+    font-size: 2.2rem;
+    padding: 0 20px;
+  }
 
-  .video-placeholder img { height: 280px; }
-  .video-wrapper iframe { height: 300px; }
-  .video-text { font-size: 1rem; }
+  nav ul {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  nav ul li a {
+    font-size: 0.95rem;
+    padding: 6px 10px;
+  }
+
+  .content-row {
+    padding: 0 15px;
+    gap: 30px;
+  }
+
+  .left-text {
+    padding: 25px;
+  }
+
+  .intro-lead {
+    font-size: 1.1rem;
+  }
+
+  .feature-item li {
+    font-size: 1rem;
+  }
+
+  .tech-specs {
+    font-size: 1rem;
+  }
+
+  .right-images {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px;
+  }
+
+  .image-item {
+    min-width: 240px;
+  }
+
+  .img-placeholder {
+    max-height: 150px;
+  }
 }
 
+
 /* ===================== */
-/* SMALL PHONES (≤480px) */
+/* RESPONSIVE - SMALL PHONES */
 /* ===================== */
 @media (max-width: 480px) {
-  .hero h1 { font-size: 1.8rem; }
-  nav ul li a { font-size: 0.85rem; }
-  .band-hero { font-size: 1.9rem; }
-  .band-images img { height: 200px; }
-  .video-placeholder img { height: 220px; }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul {
+    gap: 6px;
+  }
+
+  nav ul li a {
+    font-size: 0.85rem;
+  }
+
+  .left-text {
+    padding: 20px;
+  }
+
+  .intro-lead {
+    font-size: 1rem;
+  }
+
+  .image-item {
+    min-width: 200px;
+  }
+
 }

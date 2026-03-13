@@ -252,8 +252,8 @@ footer p {
   }
 }
 
-/* Mobile / Phones (≤768px) */
 @media (max-width: 768px) {
+
   body {
     font-size: 1rem;
   }
@@ -264,7 +264,7 @@ footer p {
 
   .hero h1 {
     font-size: 2.2rem;
-    padding: 0 15px;
+    padding: 0 20px;
   }
 
   nav ul {
@@ -278,41 +278,71 @@ footer p {
     padding: 6px 10px;
   }
 
-  .showcase-box {
+  .content-row {
+    padding: 0 15px;
+    gap: 30px;
+  }
+
+  .left-text {
     padding: 25px;
   }
 
-  .discover-items {
+  .intro-lead {
+    font-size: 1.1rem;
+  }
+
+  .feature-item li {
     font-size: 1rem;
-    line-height: 1.8;
   }
 
-  .homepage-gallery {
-    gap: 20px;
-    padding: 30px 0;
+  .tech-specs {
+    font-size: 1rem;
   }
 
-  .homepage-gallery img {
-    width: 95vw;
-    height: auto;
+  .right-images {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px;
+  }
+
+  .image-item {
+    min-width: 240px;
+  }
+
+  .img-placeholder {
+    max-height: 150px;
   }
 }
 
-/* Small Phones (≤480px) */
+
+/* ===================== */
+/* RESPONSIVE - SMALL PHONES */
+/* ===================== */
 @media (max-width: 480px) {
+
   .hero h1 {
     font-size: 1.8rem;
+  }
+
+  nav ul {
+    gap: 6px;
   }
 
   nav ul li a {
     font-size: 0.85rem;
   }
 
-  .showcase-box {
+  .left-text {
     padding: 20px;
   }
 
-  .discover-items {
-    font-size: 0.95rem;
+  .intro-lead {
+    font-size: 1rem;
   }
+
+  .image-item {
+    min-width: 200px;
+  }
+
 }

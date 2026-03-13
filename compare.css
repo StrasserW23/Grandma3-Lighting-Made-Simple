@@ -291,9 +291,6 @@ footer {
 }
 
 
-/* ===================== */
-/* RESPONSIVE - PHONES */
-/* ===================== */
 @media (max-width: 768px) {
 
   body {
@@ -306,7 +303,7 @@ footer {
 
   .hero h1 {
     font-size: 2.2rem;
-    padding: 0 15px;
+    padding: 0 20px;
   }
 
   nav ul {
@@ -320,35 +317,41 @@ footer {
     padding: 6px 10px;
   }
 
-  .container {
-    padding: 20px;
+  .content-row {
+    padding: 0 15px;
+    gap: 30px;
   }
 
-  .introset {
+  .left-text {
     padding: 25px;
   }
 
-  .comparison-row {
-    grid-template-columns: 1fr;
+  .intro-lead {
+    font-size: 1.1rem;
   }
 
-  .brand.vs {
-    display: none;
+  .feature-item li {
+    font-size: 1rem;
   }
 
-  .comparison-col {
-    padding: 20px;
+  .tech-specs {
+    font-size: 1rem;
   }
 
-  .image-placeholder,
-  .video-placeholder {
-    height: 180px;
+  .right-images {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px;
   }
 
-  .caption {
-    font-size: 0.95rem;
+  .image-item {
+    min-width: 240px;
   }
 
+  .img-placeholder {
+    max-height: 150px;
+  }
 }
 
 
@@ -361,25 +364,24 @@ footer {
     font-size: 1.8rem;
   }
 
+  nav ul {
+    gap: 6px;
+  }
+
   nav ul li a {
     font-size: 0.85rem;
   }
 
-  .introset {
+  .left-text {
     padding: 20px;
   }
 
-  .comparison-col {
-    padding: 18px;
+  .intro-lead {
+    font-size: 1rem;
   }
 
-  .image-placeholder,
-  .video-placeholder {
-    height: 150px;
-  }
-
-  .caption {
-    font-size: 0.9rem;
+  .image-item {
+    min-width: 200px;
   }
 
 }
