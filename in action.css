@@ -110,14 +110,14 @@ nav ul li a:hover {
 .container {
   max-width: 1200px;
   margin: auto;
-  padding: 40px;
+  padding: 60px;
 }
 
 .content-row {
   display: flex;
   align-items: stretch;
   gap: 50px;
-  margin: 60px auto;
+  margin: 40px auto;
 }
 
 /* LEFT TEXT BOX */
