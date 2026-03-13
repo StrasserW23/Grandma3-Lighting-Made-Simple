@@ -1,17 +1,28 @@
+/* ===================== */
+/* BASE STYLES */
+/* ===================== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  color: #333;
   font-size: 1.25rem;
+  color: #333;
+  background-color: #f2f2f2;
   background-image: url(Images/gradient.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===================== */
+/* HERO SECTION */
+/* ===================== */
 .hero {
-  background: url("Images/BackGround.png") no-repeat center center / cover;
+  background: url("Images/BackGround.png") no-repeat center center/cover;
   height: 60vh;
   display: flex;
   align-items: center;
@@ -32,8 +43,12 @@ body {
   position: relative;
   z-index: 1;
   font-size: 4rem;
+  margin: 0;
 }
 
+/* ===================== */
+/* NAVIGATION */
+/* ===================== */
 nav {
   background-color: #222;
   padding: 15px 0;
@@ -52,12 +67,22 @@ nav ul li a {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 nav ul li a.active {
   color: #ffd700;
 }
 
+nav ul li a:hover {
+  background-color: #444;
+  border-radius: 6px;
+  color: #ffd700;
+}
+
+/* ===================== */
+/* CONTAINER & SECTIONS */
+/* ===================== */
 .container {
   max-width: 1200px;
   margin: 60px auto;
@@ -83,6 +108,9 @@ nav ul li a.active {
   overflow: hidden;
 }
 
+/* ===================== */
+/* BAND HERO & CONTENT */
+/* ===================== */
 .band-hero {
   width: 100%;
   height: 180px;
@@ -95,6 +123,10 @@ nav ul li a.active {
   font-weight: bold;
   letter-spacing: 2px;
   border-radius: 12px 12px 0 0;
+}
+
+.band-hero.in-action {
+  /* same styles as default band-hero */
 }
 
 .band-content {
@@ -122,7 +154,9 @@ nav ul li a.active {
   transform: scale(1.05);
 }
 
-/* Video */
+/* ===================== */
+/* VIDEO SECTION */
+/* ===================== */
 .video-wrapper {
   width: 100%;
 }
@@ -134,16 +168,40 @@ nav ul li a.active {
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* In Action matches other gray boxes */
-.band-hero.in-action {
-  height: 180px;
-  font-size: 3.8rem;
+.video-placeholder {
+  position: relative;
+  cursor: pointer;
+}
+
+.video-placeholder img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Play button overlay */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #333;
-  color: #ffd700;
-  border-radius: 12px 12px 0 0;
+}
+
+.play-button::after {
+  content: "";
+  border-style: solid;
+  border-width: 15px 0 15px 25px;
+  border-color: transparent transparent transparent white;
+  margin-left: 5px;
 }
 
 .video-text {
@@ -151,7 +209,9 @@ nav ul li a.active {
   font-size: 1.25rem;
 }
 
-/* Footer */
+/* ===================== */
+/* FOOTER */
+/* ===================== */
 footer {
   background: #222;
   color: white;
@@ -170,202 +230,56 @@ footer .social-links a:hover {
   color: #ffd700;
 }
 
-@media (max-width: 768px) {
-  .hero h1 { font-size: 2.2rem; }
-  .band-images { grid-template-columns: 1fr; }
-  .band-images img { height: 220px; }
-  .band-hero { font-size: 3rem; height: 150px; }
-  .video-text { font-size: 1rem; }
-  .video-wrapper iframe { height: 350px; }
-}
-
-/* VIDEO PLACEHOLDER */
-
-.video-wrapper{
-width:100%;
-}
-
-.video-placeholder{
-position:relative;
-cursor:pointer;
-}
-
-.video-placeholder img{
-width:100%;
-height:600px;
-object-fit:cover;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.25);
-}
-
-/* play button */
-
-.play-button{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:90px;
-height:90px;
-background:rgba(0,0,0,0.6);
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.play-button::after{
-content:"";
-border-style:solid;
-border-width:15px 0 15px 25px;
-border-color:transparent transparent transparent white;
-margin-left:5px;
-}
-
-/* loaded video */
-
-.video-wrapper iframe{
-width:100%;
-height:600px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.25);
-}
-
 /* ===================== */
-/* TABLET */
+/* TABLET RESPONSIVE (≤1024px) */
 /* ===================== */
 @media (max-width: 1024px) {
+  .hero { height: 50vh; }
+  .hero h1 { font-size: 3rem; }
 
-  .hero {
-    height: 50vh;
-  }
+  nav ul { gap: 25px; }
 
-  .hero h1 {
-    font-size: 3rem;
-  }
+  .container { padding: 0 25px; }
 
-  nav ul {
-    gap: 25px;
-  }
+  .band-hero { font-size: 3rem; height: 160px; }
 
-  .container {
-    padding: 0 25px;
-  }
+  .band-images { grid-template-columns: repeat(2, 1fr); }
 
-  .band-hero {
-    font-size: 3rem;
-    height: 160px;
-  }
-
-  .band-images {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .video-placeholder img {
-    height: 450px;
-  }
-
-  .video-wrapper iframe {
-    height: 450px;
-  }
-
+  .video-placeholder img,
+  .video-wrapper iframe { height: 450px; }
 }
 
-
 /* ===================== */
-/* PHONES */
+/* MOBILE / PHONES (≤768px) */
 /* ===================== */
 @media (max-width: 768px) {
+  body { font-size: 1rem; }
+  .hero { height: 40vh; }
+  .hero h1 { font-size: 2.2rem; }
 
-  body {
-    font-size: 1rem;
-  }
+  nav ul { flex-wrap: wrap; gap: 10px; padding: 10px; }
+  nav ul li a { font-size: 0.95rem; }
 
-  .hero {
-    height: 40vh;
-  }
+  .container { padding: 0 15px; gap: 40px; }
+  .intro, .Ending { padding: 30px; }
+  .band-content { padding: 25px; }
+  .band-hero { font-size: 2.3rem; height: 130px; }
 
-  .hero h1 {
-    font-size: 2.2rem;
-  }
+  .band-images { grid-template-columns: 1fr; }
+  .band-images img { height: 220px; }
 
-  /* NAVIGATION WRAP */
-  nav ul {
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
-  }
-
-  nav ul li a {
-    font-size: 0.95rem;
-  }
-
-  .container {
-    padding: 0 15px;
-    gap: 40px;
-  }
-
-  .intro,
-  .Ending {
-    padding: 30px;
-  }
-
-  .band-content {
-    padding: 25px;
-  }
-
-  .band-hero {
-    font-size: 2.3rem;
-    height: 130px;
-  }
-
-  /* SINGLE COLUMN IMAGES */
-  .band-images {
-    grid-template-columns: 1fr;
-  }
-
-  .band-images img {
-    height: 220px;
-  }
-
-  .video-placeholder img {
-    height: 280px;
-  }
-
-  .video-wrapper iframe {
-    height: 300px;
-  }
-
-  .video-text {
-    font-size: 1rem;
-  }
-
+  .video-placeholder img { height: 280px; }
+  .video-wrapper iframe { height: 300px; }
+  .video-text { font-size: 1rem; }
 }
 
-
 /* ===================== */
-/* SMALL PHONES */
+/* SMALL PHONES (≤480px) */
 /* ===================== */
 @media (max-width: 480px) {
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
-  nav ul li a {
-    font-size: 0.85rem;
-  }
-
-  .band-hero {
-    font-size: 1.9rem;
-  }
-
-  .band-images img {
-    height: 200px;
-  }
-
-  .video-placeholder img {
-    height: 220px;
-  }
-
+  .hero h1 { font-size: 1.8rem; }
+  nav ul li a { font-size: 0.85rem; }
+  .band-hero { font-size: 1.9rem; }
+  .band-images img { height: 200px; }
+  .video-placeholder img { height: 220px; }
 }

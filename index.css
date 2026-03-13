@@ -1,13 +1,14 @@
 /* ===================== */
-/* GENERAL */
+/* GENERAL / BASE STYLES */
 /* ===================== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: antiquewhite;
-  color: #333;
   font-size: 1.25rem;
+  color: #333;
   scroll-padding-top: 80px;
+
+  background-color: antiquewhite;
   background-image: url(Images/gradient.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -38,20 +39,22 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0.5);
   z-index: 0;
 }
 
 .hero h1 {
   position: relative;
-  font-size: 4.5rem;
   z-index: 1;
+  font-size: 4.5rem;
   letter-spacing: 3px;
   margin: 0;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
+/* ===================== */
 /* FADE-IN ANIMATION */
+/* ===================== */
 .fade-in {
   opacity: 0;
   animation: fadeIn 2.5s ease forwards;
@@ -59,7 +62,7 @@ a {
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ===================== */
@@ -91,22 +94,19 @@ nav ul li a {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Hover effect */
+/* Hover and Active Effects */
 nav ul li a:hover {
   background-color: #444;
   border-radius: 6px;
   color: #ffd700;
 }
 
-/* ACTIVE TAB (STAYS YELLOW) */
 nav ul li a.active {
   color: #ffd700;
 }
 
 nav ul li a.active:hover {
-  color: #ffd700;
   background-color: #444;
-  border-radius: 6px;
 }
 
 /* ===================== */
@@ -122,7 +122,7 @@ nav ul li a.active:hover {
   background-color: #fff;
   padding: 30px 40px;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
   max-width: 1000px;
   width: 100%;
   transition: transform 0.3s ease;
@@ -171,7 +171,7 @@ nav ul li a.active:hover {
   height: 280px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -215,35 +215,11 @@ footer p {
 }
 
 /* ===================== */
-/* MOBILE */
+/* RESPONSIVE */
 /* ===================== */
-@media (max-width: 768px) {
-  nav ul {
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 0 10px;
-  }
 
-  nav ul li a {
-    font-size: 1rem;
-    padding: 8px 12px;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .homepage-gallery img {
-    width: 95vw;
-    height: auto;
-  }
-}
-
-/* ===================== */
-/* TABLET (iPads, small laptops) */
-/* ===================== */
+/* Tablets (≤1024px) */
 @media (max-width: 1024px) {
-
   .hero {
     height: 50vh;
   }
@@ -274,15 +250,10 @@ footer p {
     width: 320px;
     height: 220px;
   }
-
 }
 
-
-/* ===================== */
-/* MOBILE (Phones) */
-/* ===================== */
+/* Mobile / Phones (≤768px) */
 @media (max-width: 768px) {
-
   body {
     font-size: 1rem;
   }
@@ -296,7 +267,6 @@ footer p {
     padding: 0 15px;
   }
 
-  /* NAVIGATION WRAPS */
   nav ul {
     flex-wrap: wrap;
     gap: 10px;
@@ -308,7 +278,6 @@ footer p {
     padding: 6px 10px;
   }
 
-  /* SHOWCASE */
   .showcase-box {
     padding: 25px;
   }
@@ -318,7 +287,6 @@ footer p {
     line-height: 1.8;
   }
 
-  /* GALLERY STACK */
   .homepage-gallery {
     gap: 20px;
     padding: 30px 0;
@@ -328,15 +296,10 @@ footer p {
     width: 95vw;
     height: auto;
   }
-
 }
 
-
-/* ===================== */
-/* SMALL PHONES */
-/* ===================== */
+/* Small Phones (≤480px) */
 @media (max-width: 480px) {
-
   .hero h1 {
     font-size: 1.8rem;
   }
@@ -352,5 +315,4 @@ footer p {
   .discover-items {
     font-size: 0.95rem;
   }
-
 }
