@@ -215,18 +215,17 @@ footer p {
 }
 
 /* ===================== */
-/* RESPONSIVE */
+/* RESPONSIVE - TABLET */
 /* ===================== */
-
-/* Tablets (≤1024px) */
 @media (max-width: 1024px) {
+
   .hero {
     height: 50vh;
   }
 
   .hero h1 {
     font-size: 3rem;
-    padding: 0 20px;
+    letter-spacing: 2px;
   }
 
   nav ul {
@@ -238,20 +237,41 @@ footer p {
     padding: 8px 16px;
   }
 
-  .showcase-wrapper {
-    padding: 30px 20px;
+  .content-row {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 30px;
   }
 
-  .showcase-box {
-    padding: 30px;
+  .left-text {
+    padding: 35px;
   }
 
-  .homepage-gallery img {
-    width: 320px;
-    height: 220px;
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .right-images {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .image-item {
+    width: 30%;
+    min-width: 200px;
+  }
+
+  .img-placeholder {
+    max-height: 180px;
   }
 }
 
+
+/* ===================== */
+/* RESPONSIVE - MOBILE */
+/* ===================== */
 @media (max-width: 768px) {
 
   body {

@@ -259,7 +259,7 @@ footer {
 
   .hero h1 {
     font-size: 3rem;
-    padding: 0 20px;
+    letter-spacing: 2px;
   }
 
   nav ul {
@@ -271,26 +271,41 @@ footer {
     padding: 8px 16px;
   }
 
-  .container {
-    padding: 30px;
+  .content-row {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 30px;
   }
 
-  .brand {
-    font-size: 1.3rem;
+  .left-text {
+    padding: 35px;
   }
 
-  .comparison-col {
-    padding: 25px;
+  .feature-grid {
+    grid-template-columns: 1fr;
   }
 
-  .image-placeholder,
-  .video-placeholder {
-    height: 220px;
+  .right-images {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
   }
 
+  .image-item {
+    width: 30%;
+    min-width: 200px;
+  }
+
+  .img-placeholder {
+    max-height: 180px;
+  }
 }
 
 
+/* ===================== */
+/* RESPONSIVE - MOBILE */
+/* ===================== */
 @media (max-width: 768px) {
 
   body {
