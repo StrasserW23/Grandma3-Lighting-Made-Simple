@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: #333;
   background-color: #f2f2f2;
   background-image: url(Images/gradient.jpg);
@@ -16,7 +16,7 @@ a { text-decoration: none; color: inherit; }
 /* ===================== HERO SECTION ===================== */
 .hero {
   background: url("Images/BackGround.png") no-repeat center center/cover;
-  height: 60vh;
+  height: 55vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,19 +33,19 @@ a { text-decoration: none; color: inherit; }
 .hero h1 {
   position: relative;
   z-index: 1;
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin: 0;
-  letter-spacing: 2px;
+  letter-spacing: 1.8px;
 }
 
 /* ===================== NAVIGATION ===================== */
 nav {
   background-color: #222;
-  padding: 15px 0;
+  padding: 12px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.35);
 }
 nav ul {
   list-style: none;
@@ -53,14 +53,14 @@ nav ul {
   padding: 0 10px;
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 25px;
   flex-wrap: wrap;
 }
 nav ul li a {
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 8px 15px;
   transition: background 0.3s ease, color 0.3s ease;
 }
 nav ul li a:hover {
@@ -72,70 +72,74 @@ nav ul li a.active { color: #ffd700; }
 
 /* ===================== MAIN CONTAINER & SECTIONS ===================== */
 .container {
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 20px;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 15px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 50px;
 }
 
 .intro, .Ending, .band-section {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
   overflow: hidden;
 }
-.intro, .Ending { padding: 60px; text-align: left; }
+.intro, .Ending { padding: 45px; text-align: left; }
 .band-section { overflow: hidden; }
 
 /* ===================== BAND HERO & CONTENT ===================== */
 .band-hero {
   width: 100%;
-  height: 180px;
+  height: 160px;
   background-color: #333;
   color: #ffd700;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3.8rem;
+  align-items: center;       /* vertical center */
+  justify-content: center;   /* horizontal center */
+  font-size: 3.2rem;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   border-radius: 12px 12px 0 0;
+  text-align: center;        /* center multi-line text */
+  line-height: 1.1;
+  padding: 0 15px;           /* side padding for small screens */
+  box-sizing: border-box;
 }
 
-.band-content { padding: 40px; text-align: left; }
+.band-content { padding: 35px; text-align: left; }
 
 .band-images {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
 }
 
 .band-images img {
   width: 100%;
-  height: 280px;
+  height: 220px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: transform 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
   cursor: zoom-in;
 }
-.band-images img:hover { transform: scale(1.05); }
+.band-images img:hover { transform: scale(1.03); }
 
 /* ===================== FOOTER ===================== */
 footer {
   background: #222;
   color: white;
   text-align: center;
-  padding: 25px;
-  margin-top: 40px;
+  padding: 20px;
+  margin-top: 30px;
 }
 
 footer .social-links a {
   color: white;
-  margin: 0 10px;
+  margin: 0 8px;
   text-decoration: none;
   font-weight: bold;
 }
@@ -143,33 +147,33 @@ footer .social-links a:hover { color: #ffd700; }
 
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 1024px) {
-  .hero { height: 55vh; }
-  .hero h1 { font-size: 3.5rem; }
-  nav ul { gap: 35px; }
-  nav ul li a { font-size: 1.3rem; padding: 10px 18px; }
-  .band-hero { font-size: 3.5rem; height: 180px; }
-  .band-images img { height: 260px; }
-  .intro, .Ending { padding: 50px; }
-  .band-content { padding: 45px; }
+  .hero { height: 50vh; }
+  .hero h1 { font-size: 3rem; }
+  nav ul { gap: 25px; }
+  nav ul li a { font-size: 1.15rem; padding: 8px 15px; }
+  .band-hero { font-size: 3rem; height: 150px; }
+  .band-images img { height: 200px; }
+  .intro, .Ending { padding: 40px; }
+  .band-content { padding: 30px; }
 }
 
 @media (max-width: 768px) {
-  body { font-size: 1.1rem; }
-  .hero { height: 45vh; }
-  .hero h1 { font-size: 2.8rem; padding: 0 25px; }
-  nav ul { flex-wrap: wrap; gap: 15px; padding: 15px; }
-  nav ul li a { font-size: 1.1rem; padding: 8px 12px; }
-  .band-hero { font-size: 2.8rem; height: 150px; }
-  .band-images img { height: 220px; }
-  .intro, .Ending { padding: 50px; }
-  .band-content { padding: 35px; }
+  body { font-size: 1rem; }
+  .hero { height: 42vh; }
+  .hero h1 { font-size: 2.5rem; padding: 0 20px; }
+  nav ul { flex-wrap: wrap; gap: 12px; padding: 12px; }
+  nav ul li a { font-size: 1rem; padding: 6px 10px; }
+  .band-hero { font-size: 2.5rem; height: 130px; padding: 0 10px; }
+  .band-images img { height: 180px; }
+  .intro, .Ending { padding: 35px; }
+  .band-content { padding: 25px; }
 }
 
 @media (max-width: 480px) {
   .hero h1 { font-size: 2.2rem; }
-  nav ul li a { font-size: 1rem; padding: 8px 10px; }
-  .band-hero { font-size: 2.5rem; height: 130px; }
-  .band-images img { height: 180px; }
-  .intro, .Ending { padding: 35px; }
-  .band-content { padding: 25px; }
+  nav ul li a { font-size: 0.95rem; padding: 5px 8px; }
+  .band-hero { font-size: 2.2rem; height: 120px; padding: 0 8px; }
+  .band-images img { height: 160px; }
+  .intro, .Ending { padding: 30px; }
+  .band-content { padding: 20px; }
 }
