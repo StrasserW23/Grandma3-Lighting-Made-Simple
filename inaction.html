@@ -19,7 +19,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="history.html">History</a></li>
       <li><a href="compare.html">Compare</a></li>
-      <li><a href="inaction.html">In Action</a></li>
+      <li><a href="in action.html" class="active">In Action</a></li>
       <li><a href="more.html">More</a></li>
     </ul>
   </nav>
@@ -49,11 +49,11 @@
 
       <div class="right-images">
         <div class="image-item">
-          <video class="media-item" src="IMG_1698.MOV" poster="Images/dimmer-poster.jpg" controls></video>
+          <video class="video-placeholder" src="IMG_1698.MOV" controls poster="Images/dimmer-poster.jpg"></video>
           <span class="img-label">Dimmer (Chase) Effect</span>
         </div>
         <div class="image-item">
-          <video class="media-item" src="IMG_1443.MOV" poster="Images/movement-poster.jpg" controls></video>
+          <video class="video-placeholder" src="IMG_1443.MOV" controls poster="Images/movement-poster.jpg"></video>
           <span class="img-label">Movement Effect</span>
         </div>
       </div>
@@ -90,27 +90,27 @@
 
       <div class="right-images">
         <div class="image-item">
-          <img class="media-item" src="Images/new/aboveall/newgobo.png" alt="Gobo pattern">
+          <img src="Images/new/aboveall/newgobo.png" alt="Gobo pattern" class="img-placeholder">
           <span class="img-label">Pattern Selection</span>
         </div>
         <div class="image-item">
-          <img class="media-item" src="Images/new/GoboL.png" alt="Gobo look">
+          <img src="Images/new/GoboL.png" alt="Gobo look" class="img-placeholder">
           <span class="img-label">Visual Indexing</span>
         </div>
       </div>
     </section>
 
-    <!-- LIVE BAND VIDEO -->
+     <!-- LIVE BAND VIDEO -->
     <section class="band-section">
       <div class="band-content-wrapper">
-        <div class="band-hero">LIVE</div>
+        <div class="band-hero in-action">LIVE</div>
         <p class="video-text">
           The music used in this video is copyrighted and sourced from YouTube. 
           <a href="https://www.youtube.com/watch?v=QPQsATv7SS8&t=25s" target="_blank"><b>Click here!</b></a>
         </p>
 
         <div class="video-wrapper">
-          <div class="media-item" data-youtube="QPQsATv7SS8">
+          <div class="video-placeholder" onclick="loadYouTubeVideo(this, 'QPQsATv7SS8')">
             <img src="Images/new/3D.jpeg" alt="Lighting Demo">
             <div class="play-button">&#9658;</div>
           </div>
@@ -120,12 +120,8 @@
 
   </main>
 
-  <!-- LIGHTBOX / FULLSCREEN OVERLAY -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-media" src="">
-    <video class="lightbox-video" controls src=""></video>
-  </div>
+
+  </main>
 
   <!-- FOOTER -->
   <footer>
@@ -137,53 +133,26 @@
   </footer>
 
   <script>
-    // Highlight active nav link
+    function loadYouTubeVideo(container, videoId) {
+      const iframe = document.createElement('iframe');
+      iframe.width = "100%";
+      iframe.height = "450";
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      iframe.title = "LIVE Performance";
+      iframe.frameBorder = "0";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      container.innerHTML = "";
+      container.appendChild(iframe);
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
-      const currentPage = window.location.pathname.split("/").pop();
+      const currentPage = decodeURIComponent(window.location.pathname.split("/").pop());
       document.querySelectorAll('nav ul li a').forEach(link => {
         if(link.getAttribute('href') === currentPage) link.classList.add('active');
       });
-
-      // LIGHTBOX FUNCTIONALITY
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = lightbox.querySelector(".lightbox-media");
-      const lightboxVideo = lightbox.querySelector(".lightbox-video");
-      const closeBtn = lightbox.querySelector(".close");
-
-      document.querySelectorAll(".media-item").forEach(item => {
-        item.addEventListener("click", () => {
-          if(item.tagName === "IMG") {
-            lightboxImg.src = item.src;
-            lightboxImg.style.display = "block";
-            lightboxVideo.style.display = "none";
-          } else if(item.tagName === "VIDEO") {
-            lightboxVideo.src = item.src;
-            lightboxVideo.style.display = "block";
-            lightboxVideo.play();
-            lightboxImg.style.display = "none";
-          } else if(item.dataset.youtube) {
-            lightboxVideo.src = `https://www.youtube.com/embed/${item.dataset.youtube}?autoplay=1`;
-            lightboxVideo.style.display = "block";
-            lightboxImg.style.display = "none";
-          }
-          lightbox.style.display = "flex";
-        });
-      });
-
-      closeBtn.addEventListener("click", () => {
-        lightbox.style.display = "none";
-        lightboxVideo.pause();
-        lightboxVideo.src = "";
-      });
-
-      lightbox.addEventListener("click", e => {
-        if(e.target === lightbox) {
-          lightbox.style.display = "none";
-          lightboxVideo.pause();
-          lightboxVideo.src = "";
-        }
-      });
     });
   </script>
+
 </body>
 </html>
