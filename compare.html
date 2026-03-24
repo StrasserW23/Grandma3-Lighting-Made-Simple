@@ -5,7 +5,7 @@
   <title>grandMA3 vs Vista</title>
   <link rel="stylesheet" href="compare.css">
 </head>
-<body class="show-ma3">
+<body>
 
   <!-- HERO -->
   <header class="hero">
@@ -13,7 +13,7 @@
     <h1 class="fade-in">grandMA3 vs Vista</h1>
   </header>
 
-  <!-- NAVIGATION -->
+  <!-- NAV -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -26,21 +26,23 @@
 
   <main class="container">
 
-    <!-- INTRO -->
     <section class="introset">
       <p>Compare the leading lighting consoles in real-world workflows.</p>
     </section>
 
-    <!-- TABS (Tablet/Mobile only) -->
+    <!-- ===================== -->
+    <!-- TAB BUTTONS FOR MOBILE/TABLET -->
+    <!-- ===================== -->
     <div class="compare-tabs">
-      <button class="tab-btn active" onclick="switchTab('ma3', this)">grandMA3</button>
-      <button class="tab-btn" onclick="switchTab('vista', this)">Vista</button>
+      <button class="tab-btn active" data-tab="ma3">grandMA3</button>
+      <button class="tab-btn" data-tab="vista">Vista</button>
     </div>
 
     <!-- ===================== -->
     <!-- COMPARISON CARD 1 -->
     <!-- ===================== -->
     <section class="comparison-card">
+
       <div class="comparison-header">
         <div class="brand ma3">grandMA3</div>
         <div class="brand vs">VS</div>
@@ -49,27 +51,35 @@
 
       <!-- WORKFLOW -->
       <div class="comparison-row">
-        <div class="comparison-col ma3 ma3-tab">
-          <img src="Images/new/aboveall/maworkflow.webp" alt="grandMA3 Workflow">
+        <div class="comparison-col ma3 tab-content active">
+          <div class="video-placeholder">
+            <img src="Images/new/aboveall/maworkflow.webp" alt="grandMA3 Workflow">
+          </div>
           <div class="caption">The grandMA3 workflow is far more organized and streamlined, offering extensive customization with groups and multiple pages.</div>
         </div>
 
-        <div class="comparison-col vista vista-tab">
-          <img src="Images/new/aboveall/vistaworkflow.png" alt="Vista Workflow">
-          <div class="caption">Vista’s workflow is less structured and not as flexible.</div>
+        <div class="comparison-col vista tab-content">
+          <div class="video-placeholder">
+            <img src="Images/new/aboveall/vistaworkflow.png" alt="Vista Workflow">
+          </div>
+          <div class="caption">Unlike grandMA3, Vista’s workflow is less structured and not as flexible.</div>
         </div>
       </div>
 
       <!-- STAGE DISPLAY -->
       <div class="comparison-row">
-        <div class="comparison-col ma3 ma3-tab">
-          <img src="Images/new/aboveall/mastage.png" alt="grandMA3 Stage Display">
-          <div class="caption">Customizable haze and multiple camera angles allow visualization from various perspectives.</div>
+        <div class="comparison-col ma3 tab-content active">
+          <div class="video-placeholder">
+            <img src="Images/new/aboveall/mastage.png" alt="grandMA3 Stage Display">
+          </div>
+          <div class="caption">grandMA3 stage display is customizable with multiple camera angles.</div>
         </div>
 
-        <div class="comparison-col vista vista-tab">
-          <img src="Images/new/aboveall/vistastage.png" alt="Vista Stage Display">
-          <div class="caption">Vista doesn’t handle stage visualization nearly as well.</div>
+        <div class="comparison-col vista tab-content">
+          <div class="video-placeholder">
+            <img src="Images/new/aboveall/vistastage.png" alt="Vista Stage Display">
+          </div>
+          <div class="caption">Vista stage display is less flexible.</div>
         </div>
       </div>
     </section>
@@ -78,6 +88,7 @@
     <!-- COMPARISON CARD 2 -->
     <!-- ===================== -->
     <section class="comparison-card">
+
       <div class="comparison-header">
         <div class="brand ma3">grandMA3</div>
         <div class="brand vs">VS</div>
@@ -86,38 +97,35 @@
 
       <!-- USER FRIENDLY -->
       <div class="comparison-row">
-        <div class="comparison-col ma3 ma3-tab">
-          <img src="Images/new/aboveall/mapatch.png" alt="grandMA3 User Friendly">
-          <div class="caption">The patch list in grandMA3 is cleaner and more modern, making it easier to navigate and manage fixtures.</div>
+        <div class="comparison-col ma3 tab-content active">
+          <div class="image-placeholder">
+            <img src="Images/new/aboveall/mapatch.png" alt="grandMA3 User Friendly">
+          </div>
+          <div class="caption">The patch list in grandMA3 is far cleaner and more modern, making it easier to navigate and manage fixtures.</div>
         </div>
 
-        <div class="comparison-col vista vista-tab">
-          <img src="Images/new/aboveall/vistapatch.jpeg" alt="Vista User Friendly">
-          <div class="caption">Vista’s patching page isn’t visually clean and lacks step-by-step guidance.</div>
+        <div class="comparison-col vista tab-content">
+          <div class="image-placeholder">
+            <img src="Images/new/aboveall/vistapatch.jpeg" alt="Vista User Friendly">
+          </div>
+          <div class="caption">Vista’s patching page isn’t modern or visually clean, and it doesn’t provide step-by-step guidance.</div>
         </div>
       </div>
-    </section>
 
-    <!-- ===================== -->
-    <!-- COMPARISON CARD 3 -->
-    <!-- ===================== -->
-    <section class="comparison-card">
-      <div class="comparison-header">
-        <div class="brand ma3">grandMA3</div>
-        <div class="brand vs">VS</div>
-        <div class="brand vista">Vista</div>
-      </div>
-
-      <!-- EFFECTS -->
+      <!-- LAYOUT VIEWER -->
       <div class="comparison-row">
-        <div class="comparison-col ma3 ma3-tab">
-          <img src="Images/new/aboveall/mamonitors.png" alt="grandMA3 Effects">
-          <div class="caption">Depending on the model, you can get prebuilt touch screen monitors.</div>
+        <div class="comparison-col ma3 tab-content active">
+          <div class="image-placeholder">
+            <img src="Images/new/aboveall/malayout.png" alt="grandMA3 Layout Viewer">
+          </div>
+          <div class="caption">grandMA3 layout viewer lets you organize fixtures into customizable groups.</div>
         </div>
 
-        <div class="comparison-col vista vista-tab">
-          <img src="Images/new/aboveall/vistamonitor.jpg" alt="Vista Effects">
-          <div class="caption">Vista monitors must be purchased separately.</div>
+        <div class="comparison-col vista tab-content">
+          <div class="image-placeholder">
+            <img src="Images/new/aboveall/vistalayout.jpeg" alt="Vista Layout Viewer">
+          </div>
+          <div class="caption">Vista requires navigating to a separate page; groups cannot be color-coded.</div>
         </div>
       </div>
     </section>
@@ -133,13 +141,29 @@
     </div>
   </footer>
 
-  <!-- JS: TAB SWITCH -->
+  <!-- ===================== -->
+  <!-- JS FOR TABS -->
+  <!-- ===================== -->
   <script>
-    function switchTab(tab, btn) {
-      document.body.className = 'show-' + tab;
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    }
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+
+        tabButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        tabContents.forEach(content => {
+          if(content.classList.contains(target)){
+            content.classList.add('active');
+          } else {
+            content.classList.remove('active');
+          }
+        });
+      });
+    });
   </script>
 
 </body>
