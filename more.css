@@ -178,3 +178,37 @@ footer .social-links a:hover { color: #ffd700; }
   .intro, .Ending { padding: 25px; }
   .band-content { padding: 20px; }
 }
+
+/* iPhone 16 Pro Max specific styles */
+@media only screen 
+  and (min-device-width: 430px) 
+  and (max-device-width: 430px) 
+  and (-webkit-device-pixel-ratio: 3) {
+    
+  body {
+    font-size: 1.05rem; /* slightly smaller for better readability */
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    padding: 0 15px;
+  }
+
+  nav ul li a {
+    font-size: 0.85rem;
+    padding: 6px 8px;
+  }
+
+  .band-hero {
+    font-size: 2rem;
+    height: 100px;
+  }
+
+  .band-images img {
+    height: 140px;
+  }
+
+  .intro, .Ending, .band-content {
+    padding: 20px;
+  }
+}
