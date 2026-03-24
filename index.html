@@ -7,66 +7,90 @@
 </head>
 <body>
 
-  <header class="hero">
-    <div class="overlay"></div> 
-    <h1 class="fade-in">grandMA3: Lighting Made Simple</h1>
-  </header>
+<header class="hero">
+  <h1 class="fade-in">grandMA3: Lighting Made Simple</h1>
+</header>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="history.html">History</a></li>
-      <li><a href="compare.html">Compare</a></li>
-      <li><a href="inaction.html">In Action</a></li>
-      <li><a href="more.html">More</a></li>
-    </ul>
-  </nav>
+<nav>
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="history.html">History</a></li>
+    <li><a href="compare.html">Compare</a></li>
+    <li><a href="inaction.html">In Action</a></li>
+    <li><a href="more.html">More</a></li>
+  </ul>
+</nav>
 
-  <!-- SHOWCASE SECTION -->
-  <section class="showcase-wrapper">
-    <div class="showcase-box">
-      <h1>Showcasing grandMA3</h1>
-      <p>
-        Experience grandMA3 like never before—live event videos, behind-the-scenes photos, and a full history of the platform. Explore its out-of-this-world DMX lighting control and see how grandMA3 brings shows to life.
-      </p>
-      <h2>📸 Discover:</h2>
-      <div class="discover-items">
-        <span>Live-use videos and event photos</span> • 
-        <span>Behind-the-scenes lighting moments</span> • 
-        <span>The evolution and milestones of grandMA3</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- IMAGE GALLERY -->
-  <div class="container">
-    <div class="homepage-gallery">
-      <img src="Images/new/Redbeam.jpg" alt="Stage Lighting 1">
-      <img src="Images/new/bigcross.jpg" alt="Stage Lighting 2">
-      <img src="Images/new/tribesblue.jpg" alt="Stage Lighting 3">
+<!-- SHOWCASE SECTION -->
+<section class="showcase-wrapper">
+  <div class="showcase-box">
+    <h1>Showcasing grandMA3</h1>
+    <p>
+      Experience grandMA3 like never before—live event videos, behind-the-scenes photos, and a full history of the platform. Explore its out-of-this-world DMX lighting control and see how grandMA3 brings shows to life.
+    </p>
+    <h2>📸 Discover:</h2>
+    <div class="discover-items">
+      <span>Live-use videos and event photos</span> • 
+      <span>Behind-the-scenes lighting moments</span> • 
+      <span>The evolution and milestones of grandMA3</span>
     </div>
   </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 grandMA3: Lighting Made Simple. All rights reserved.</p>
-    <div class="social-links">
-      <a href="https://www.instagram.com/strasser_will23/" target="_blank">Instagram</a>
-      <a href="https://www.linkedin.com/in/strasserwill23" target="_blank">LinkedIn</a>
-    </div>
-  </footer>
+<!-- IMAGE GALLERY -->
+<div class="container">
+  <div class="homepage-gallery">
+    <img src="Images/new/Redbeam.jpg" alt="Stage Lighting 1">
+    <img src="Images/new/bigcross.jpg" alt="Stage Lighting 2">
+    <img src="Images/new/tribesblue.jpg" alt="Stage Lighting 3">
+  </div>
+</div>
 
-  <!-- JS to highlight current tab -->
-  <script>
-    const currentPage = window.location.pathname.split("/").pop();
-    const navLinks = document.querySelectorAll('nav ul li a');
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 grandMA3: Lighting Made Simple. All rights reserved.</p>
+  <div class="social-links">
+    <a href="https://www.instagram.com/strasser_will23/" target="_blank">Instagram</a>
+    <a href="https://www.linkedin.com/in/strasserwill23" target="_blank">LinkedIn</a>
+  </div>
+</footer>
 
-    navLinks.forEach(link => {
-      if (link.getAttribute('href') === currentPage) {
-        link.classList.add('active');
-      }
+<script>
+  // Highlight current nav tab
+  const currentPage = window.location.pathname.split("/").pop();
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    if(link.getAttribute('href') === currentPage) link.classList.add('active');
+  });
+
+  // Make gallery images clickable for fullscreen
+  document.querySelectorAll('.homepage-gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = 0;
+      overlay.style.left = 0;
+      overlay.style.width = '100vw';
+      overlay.style.height = '100vh';
+      overlay.style.backgroundColor = 'rgba(0,0,0,0.9)';
+      overlay.style.display = 'flex';
+      overlay.style.alignItems = 'center';
+      overlay.style.justifyContent = 'center';
+      overlay.style.zIndex = 9999;
+      overlay.style.cursor = 'zoom-out';
+
+      const fullImg = document.createElement('img');
+      fullImg.src = img.src;
+      fullImg.style.maxWidth = '90%';
+      fullImg.style.maxHeight = '90%';
+      fullImg.style.borderRadius = '12px';
+      fullImg.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+
+      overlay.appendChild(fullImg);
+      overlay.addEventListener('click', () => overlay.remove());
+      document.body.appendChild(overlay);
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
