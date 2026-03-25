@@ -19,7 +19,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="history.html">History</a></li>
       <li><a href="compare.html">Compare</a></li>
-      <li><a href="in action.html" class="active">In Action</a></li>
+      <li><a href="inaction.html" class="active">In Action</a></li>
       <li><a href="more.html">More</a></li>
     </ul>
   </nav>
@@ -120,8 +120,11 @@
 
   </main>
 
-
-  </main>
+  <!-- LIGHTBOX FOR IMAGES -->
+  <div id="image-lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
 
   <!-- FOOTER -->
   <footer>
@@ -132,6 +135,7 @@
     </div>
   </footer>
 
+  <!-- SCRIPTS -->
   <script>
     function loadYouTubeVideo(container, videoId) {
       const iframe = document.createElement('iframe');
@@ -146,11 +150,33 @@
       container.appendChild(iframe);
     }
 
+    // Highlight active nav link
     document.addEventListener("DOMContentLoaded", () => {
       const currentPage = decodeURIComponent(window.location.pathname.split("/").pop());
       document.querySelectorAll('nav ul li a').forEach(link => {
         if(link.getAttribute('href') === currentPage) link.classList.add('active');
       });
+
+      // IMAGE LIGHTBOX
+      const lightbox = document.getElementById("image-lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const closeBtn = document.querySelector(".lightbox-close");
+      const images = document.querySelectorAll(".right-images img");
+
+      images.forEach(img => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", () => {
+          lightbox.style.display = "flex";
+          lightboxImg.src = img.src;
+        });
+      });
+
+      closeBtn.onclick = () => lightbox.style.display = "none";
+      lightbox.onclick = (e) => {
+        if (e.target !== lightboxImg && e.target !== closeBtn) {
+          lightbox.style.display = "none";
+        }
+      };
     });
   </script>
 
