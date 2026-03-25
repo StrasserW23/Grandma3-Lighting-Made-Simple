@@ -30,12 +30,13 @@
       <p>Compare the leading lighting consoles in real-world workflows.</p>
     </section>
 
+    <!-- TAB BUTTONS FOR MOBILE/TABLET -->
     <div class="compare-tabs">
       <button class="tab-btn active" data-tab="ma3">grandMA3</button>
       <button class="tab-btn" data-tab="vista">Vista</button>
     </div>
 
-    <!-- COMPARISON CARD -->
+    <!-- COMPARISON CARD 1 -->
     <section class="comparison-card">
 
       <div class="comparison-header">
@@ -48,29 +49,93 @@
       <div class="comparison-row">
         <div class="comparison-col ma3 tab-content active">
           <div class="video-placeholder">
-            <img src="Images/new/aboveall/maworkflow.webp" alt="grandMA3 Workflow">
+            <a href="Images/new/aboveall/maworkflow.webp">
+              <img src="Images/new/aboveall/maworkflow.webp" alt="grandMA3 Workflow">
+            </a>
           </div>
-          <div class="caption">The grandMA3 workflow is far more organized...</div>
+          <div class="caption">The grandMA3 workflow is far more organized and streamlined, offering extensive customization with groups and multiple pages.</div>
         </div>
 
         <div class="comparison-col vista tab-content">
           <div class="video-placeholder">
-            <img src="Images/new/aboveall/vistaworkflow.png" alt="Vista Workflow">
+            <a href="Images/new/aboveall/vistaworkflow.png">
+              <img src="Images/new/aboveall/vistaworkflow.png" alt="Vista Workflow">
+            </a>
           </div>
-          <div class="caption">Vista’s workflow is less structured...</div>
+          <div class="caption">Unlike grandMA3, Vista’s workflow is less structured and not as flexible.</div>
         </div>
       </div>
 
-      <!-- STAGE -->
+      <!-- STAGE DISPLAY -->
       <div class="comparison-row">
         <div class="comparison-col ma3 tab-content active">
-          <img src="Images/new/aboveall/mastage.png" alt="grandMA3 Stage">
-          <div class="caption">Customizable stage display.</div>
+          <div class="video-placeholder">
+            <a href="Images/new/aboveall/mastage.png">
+              <img src="Images/new/aboveall/mastage.png" alt="grandMA3 Stage Display">
+            </a>
+          </div>
+          <div class="caption">grandMA3 stage display is customizable with multiple camera angles.</div>
         </div>
 
         <div class="comparison-col vista tab-content">
-          <img src="Images/new/aboveall/vistastage.png" alt="Vista Stage">
-          <div class="caption">Less flexible display.</div>
+          <div class="video-placeholder">
+            <a href="Images/new/aboveall/vistastage.png">
+              <img src="Images/new/aboveall/vistastage.png" alt="Vista Stage Display">
+            </a>
+          </div>
+          <div class="caption">Vista stage display is less flexible.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON CARD 2 -->
+    <section class="comparison-card">
+
+      <div class="comparison-header">
+        <div class="brand ma3">grandMA3</div>
+        <div class="brand vs">VS</div>
+        <div class="brand vista">Vista</div>
+      </div>
+
+      <!-- USER FRIENDLY -->
+      <div class="comparison-row">
+        <div class="comparison-col ma3 tab-content active">
+          <div class="image-placeholder">
+            <a href="Images/new/aboveall/mapatch.png">
+              <img src="Images/new/aboveall/mapatch.png" alt="grandMA3 User Friendly">
+            </a>
+          </div>
+          <div class="caption">The patch list in grandMA3 is far cleaner and more modern, making it easier to navigate and manage fixtures.</div>
+        </div>
+
+        <div class="comparison-col vista tab-content">
+          <div class="image-placeholder">
+            <a href="Images/new/aboveall/vistapatch.jpeg">
+              <img src="Images/new/aboveall/vistapatch.jpeg" alt="Vista User Friendly">
+            </a>
+          </div>
+          <div class="caption">Vista’s patching page isn’t modern or visually clean, and it doesn’t provide step-by-step guidance.</div>
+        </div>
+      </div>
+
+      <!-- LAYOUT VIEWER -->
+      <div class="comparison-row">
+        <div class="comparison-col ma3 tab-content active">
+          <div class="image-placeholder">
+            <a href="Images/new/aboveall/malayout.png">
+              <img src="Images/new/aboveall/malayout.png" alt="grandMA3 Layout Viewer">
+            </a>
+          </div>
+          <div class="caption">grandMA3 layout viewer lets you organize fixtures into customizable groups.</div>
+        </div>
+
+        <div class="comparison-col vista tab-content">
+          <div class="image-placeholder">
+            <a href="Images/new/aboveall/vistalayout.jpeg">
+              <img src="Images/new/aboveall/vistalayout.jpeg" alt="Vista Layout Viewer">
+            </a>
+          </div>
+          <div class="caption">Vista requires navigating to a separate page; groups cannot be color-coded.</div>
         </div>
       </div>
     </section>
@@ -78,17 +143,21 @@
   </main>
 
   <!-- LIGHTBOX -->
-  <div id="lightbox" class="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
+  <div id="lightbox">
+    <span class="close">&times;</span>
+    <img src="" alt="Lightbox Image">
   </div>
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 grandMA3</p>
+    <p>&copy; 2025 grandMA3: Lighting Made Simple. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/strasser_will23/" target="_blank">Instagram</a>
+      <a href="https://www.linkedin.com/in/strasserwill23" target="_blank">LinkedIn</a>
+    </div>
   </footer>
 
-  <!-- TAB SCRIPT -->
+  <!-- JS FOR TABS -->
   <script>
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
@@ -101,34 +170,31 @@
         btn.classList.add('active');
 
         tabContents.forEach(content => {
-          content.classList.toggle('active', content.classList.contains(target));
+          if(content.classList.contains(target)){
+            content.classList.add('active');
+          } else {
+            content.classList.remove('active');
+          }
         });
       });
     });
-  </script>
 
-  <!-- LIGHTBOX SCRIPT -->
-  <script>
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const closeBtn = document.querySelector(".lightbox-close");
+    // ================= LIGHTBOX =================
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const closeBtn = lightbox.querySelector('.close');
 
-    const images = document.querySelectorAll(".comparison-col img");
-
-    images.forEach(img => {
-      img.addEventListener("click", () => {
-        lightbox.style.display = "flex";
-        lightboxImg.src = img.src;
+    document.querySelectorAll('.comparison-col a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        lightboxImg.src = link.href;
+        lightbox.style.display = 'flex';
       });
     });
 
-    closeBtn.onclick = () => lightbox.style.display = "none";
+    closeBtn.onclick = () => { lightbox.style.display = 'none'; }
+    lightbox.onclick = e => { if(e.target !== lightboxImg) lightbox.style.display = 'none'; }
 
-    lightbox.onclick = (e) => {
-      if (e.target !== lightboxImg) {
-        lightbox.style.display = "none";
-      }
-    };
   </script>
 
 </body>

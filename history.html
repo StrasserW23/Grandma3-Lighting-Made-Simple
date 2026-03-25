@@ -6,6 +6,7 @@
   <title>grandMA3: History</title>
   <link rel="stylesheet" href="history.css">
 </head>
+
 <body>
 
   <header class="hero">
@@ -67,39 +68,23 @@
       </div>
     </div>
 
-    <!-- RIGHT IMAGES -->
     <div class="right-images">
       <div class="image-item">
         <img src="Images/cwing.jpeg" alt="GrandMA3 Command Wing" class="img-placeholder">
-        <span class="img-label">
-          The Command Wing 
-          <a href="https://www.fullcompass.com/prod/594055-ma-lighting-grandma3pc-commandxt-ma3-onpc-command-wing-xt-ma4010519" target="_blank">(Buy Here)</a>
-        </span>
+        <span class="img-label">The Command Wing <a href="https://www.fullcompass.com/prod/594055-ma-lighting-grandma3pc-commandxt-ma3-onpc-command-wing-xt-ma4010519" target="_blank">(Buy Here)</a></span>
       </div>
       
       <div class="image-item">
         <img src="Images/lite.jpeg" alt="GrandMA3 Lite" class="img-placeholder">
-        <span class="img-label">
-          Lite 
-          <a href="https://www.fullcompass.com/prod/562030-ma-lighting-grandma3-light-lighting-console-with-16-384-control-parameters" target="_blank">(Buy Here)</a>
-        </span>
+        <span class="img-label">Lite <a href="https://www.fullcompass.com/prod/562030-ma-lighting-grandma3-light-lighting-console-with-16-384-control-parameters" target="_blank">(Buy Here)</a></span>
       </div>
       
       <div class="image-item">
         <img src="Images/full.jpeg" alt="GrandMA3 Full Size" class="img-placeholder">
-        <span class="img-label">
-          Full Size 
-          <a href="https://www.fullcompass.com/prod/562026-ma-lighting-grandma3-full-size-lighting-control-console-with-20-480-parameters" target="_blank">(Buy Here)</a>
-        </span>
+        <span class="img-label">Full Size <a href="https://www.fullcompass.com/prod/562026-ma-lighting-grandma3-full-size-lighting-control-console-with-20-480-parameters" target="_blank">(Buy Here)</a></span>
       </div>
     </div>
   </section>
-
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
-  </div>
 
   <footer>
     <p>&copy; 2025 grandMA3: Lighting Made Simple. All rights reserved.</p>
@@ -109,7 +94,7 @@
     </div>
   </footer>
 
-  <!-- NAV ACTIVE SCRIPT -->
+  <!-- NAV SCRIPT -->
   <script>
     const currentPage = decodeURIComponent(window.location.pathname.split("/").pop()) || "history.html";
     const navLinks = document.querySelectorAll('nav ul li a');
@@ -124,25 +109,51 @@
   <!-- LIGHTBOX SCRIPT -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      const closeBtn = document.querySelector(".lightbox-close");
+      // Create lightbox
+      const lightbox = document.createElement("div");
+      lightbox.id = "lightbox";
+      lightbox.style.cssText = `
+        display:none;
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,0.9);
+        justify-content:center;
+        align-items:center;
+        z-index:9999;
+      `;
 
-      const images = document.querySelectorAll(".right-images img");
+      const img = document.createElement("img");
+      img.style.cssText = `
+        max-width:90%;
+        max-height:85%;
+        border-radius:10px;
+      `;
 
-      images.forEach(img => {
-        img.style.cursor = "zoom-in";
-        img.addEventListener("click", () => {
+      const close = document.createElement("span");
+      close.innerHTML = "&times;";
+      close.style.cssText = `
+        position:absolute;
+        top:20px;
+        right:30px;
+        font-size:40px;
+        color:white;
+        cursor:pointer;
+      `;
+
+      lightbox.appendChild(img);
+      lightbox.appendChild(close);
+      document.body.appendChild(lightbox);
+
+      document.querySelectorAll(".right-images img").forEach(image => {
+        image.style.cursor = "zoom-in";
+        image.addEventListener("click", function () {
+          img.src = this.src;
           lightbox.style.display = "flex";
-          lightboxImg.src = img.src;
         });
       });
 
-      closeBtn.onclick = () => lightbox.style.display = "none";
-
-      lightbox.onclick = (e) => {
-        if (e.target !== lightboxImg) lightbox.style.display = "none";
-      };
+      close.onclick = () => lightbox.style.display = "none";
+      lightbox.onclick = (e) => { if(e.target !== img) lightbox.style.display = "none"; };
     });
   </script>
 
