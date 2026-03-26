@@ -8,12 +8,10 @@
 </head>
 <body>
 
-  <!-- HERO -->
   <header class="hero">
     <h1 class="fade-in">grandMA3 In Action</h1>
   </header>
 
-  <!-- NAVIGATION -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -24,10 +22,8 @@
     </ul>
   </nav>
 
-  <!-- MAIN CONTENT -->
   <main class="container">
 
-    <!-- PHASERS & EFFECTS -->
     <section class="content-row">
       <div class="left-text">
         <h2>Phasers & Effects</h2>
@@ -49,17 +45,23 @@
 
       <div class="right-images">
         <div class="image-item">
-          <video class="video-placeholder" src="IMG_1698.MOV" controls poster="Images/dimmer-poster.jpg"></video>
+          <div class="video-placeholder" onclick="loadYouTubeVideo(this, 'jDLmN4uOKQY')">
+            <img src="Images/new/Epix.jpg" alt="Dimmer Effect">
+            <div class="play-button">&#9658;</div>
+          </div>
           <span class="img-label">Dimmer (Chase) Effect</span>
         </div>
+        
         <div class="image-item">
-          <video class="video-placeholder" src="IMG_1443.MOV" controls poster="Images/movement-poster.jpg"></video>
+          <div class="video-placeholder" onclick="loadYouTubeVideo(this, '0cO1JSV9FtU')">
+            <img src="Images/new/IMG_1328.jpg" alt="Movement Effect">
+            <div class="play-button">&#9658;</div>
+          </div>
           <span class="img-label">Movement Effect</span>
         </div>
       </div>
     </section>
 
-    <!-- GOBO CONTROL -->
     <section class="content-row">
       <div class="left-text">
         <h2>Gobo Control</h2>
@@ -100,8 +102,7 @@
       </div>
     </section>
 
-     <!-- LIVE BAND VIDEO -->
-    <section class="band-section">
+     <section class="band-section">
       <div class="band-content-wrapper">
         <div class="band-hero in-action">LIVE</div>
         <p class="video-text">
@@ -120,13 +121,11 @@
 
   </main>
 
-  <!-- LIGHTBOX FOR IMAGES -->
   <div id="image-lightbox" class="lightbox">
     <span class="lightbox-close">&times;</span>
     <img class="lightbox-content" id="lightbox-img">
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 grandMA3: Lighting Made Simple. All rights reserved.</p>
     <div class="social-links">
@@ -135,14 +134,13 @@
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
   <script>
     function loadYouTubeVideo(container, videoId) {
       const iframe = document.createElement('iframe');
       iframe.width = "100%";
       iframe.height = "450";
       iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-      iframe.title = "LIVE Performance";
+      iframe.title = "YouTube Video";
       iframe.frameBorder = "0";
       iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
       iframe.allowFullscreen = true;
@@ -150,14 +148,12 @@
       container.appendChild(iframe);
     }
 
-    // Highlight active nav link
     document.addEventListener("DOMContentLoaded", () => {
       const currentPage = decodeURIComponent(window.location.pathname.split("/").pop());
       document.querySelectorAll('nav ul li a').forEach(link => {
         if(link.getAttribute('href') === currentPage) link.classList.add('active');
       });
 
-      // IMAGE LIGHTBOX
       const lightbox = document.getElementById("image-lightbox");
       const lightboxImg = document.getElementById("lightbox-img");
       const closeBtn = document.querySelector(".lightbox-close");

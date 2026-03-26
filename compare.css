@@ -32,7 +32,6 @@ body {
   text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
-/* ===================== HERO ANIMATION ===================== */
 .fade-in { opacity: 0; animation: fadeIn 2.5s ease forwards; }
 @keyframes fadeIn { from { opacity:0; transform: translateY(30px);} to { opacity:1; transform: translateY(0);} }
 
@@ -124,7 +123,7 @@ nav ul li a.active { color: #ffd700 !important; }
 
 .comparison-col img { width:100%; border-radius:12px; cursor: pointer; transition: transform 0.2s ease; }
 .comparison-col img:hover { transform: scale(1.02); }
-.caption { margin-top:15px; font-weight:bold; text-align:left; }
+.caption { margin-top:15px; font-weight:bold; text-align:left; line-height: 1.6; }
 
 /* ===================== FOOTER ===================== */
 footer {
@@ -162,13 +161,10 @@ footer {
   cursor: pointer;
 }
 
-/* ===================== RESPONSIVE ===================== */
-@media (max-width: 768px) {
-  .hero { height: 40vh; }
-  .hero h1 { font-size: 2.2rem; padding: 0 20px; }
+/* MOBILE FIX */
+@media (max-width: 850px) {
+  .compare-tabs { display: flex; }
   .comparison-row { grid-template-columns: 1fr; }
-  .comparison-col { padding: 20px; }
-}
-@media (max-width: 480px) {
-  .hero h1 { font-size: 1.8rem; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
 }

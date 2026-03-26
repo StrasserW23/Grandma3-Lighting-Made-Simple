@@ -7,13 +7,11 @@
 </head>
 <body>
 
-  <!-- HERO -->
   <header class="hero">
     <div class="overlay"></div>
     <h1 class="fade-in">grandMA3 vs Vista</h1>
   </header>
 
-  <!-- NAV -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -30,22 +28,18 @@
       <p>Compare the leading lighting consoles in real-world workflows.</p>
     </section>
 
-    <!-- TAB BUTTONS FOR MOBILE/TABLET -->
     <div class="compare-tabs">
       <button class="tab-btn active" data-tab="ma3">grandMA3</button>
       <button class="tab-btn" data-tab="vista">Vista</button>
     </div>
 
-    <!-- COMPARISON CARD 1 -->
     <section class="comparison-card">
-
       <div class="comparison-header">
         <div class="brand ma3">grandMA3</div>
-        <div class="brand vs">VS</div>
+        <div class="brand vs">Workspace</div>
         <div class="brand vista">Vista</div>
       </div>
 
-      <!-- WORKFLOW -->
       <div class="comparison-row">
         <div class="comparison-col ma3 tab-content active">
           <div class="video-placeholder">
@@ -66,7 +60,6 @@
         </div>
       </div>
 
-      <!-- STAGE DISPLAY -->
       <div class="comparison-row">
         <div class="comparison-col ma3 tab-content active">
           <div class="video-placeholder">
@@ -88,16 +81,13 @@
       </div>
     </section>
 
-    <!-- COMPARISON CARD 2 -->
     <section class="comparison-card">
-
       <div class="comparison-header">
         <div class="brand ma3">grandMA3</div>
-        <div class="brand vs">VS</div>
+        <div class="brand vs">Patching</div>
         <div class="brand vista">Vista</div>
       </div>
 
-      <!-- USER FRIENDLY -->
       <div class="comparison-row">
         <div class="comparison-col ma3 tab-content active">
           <div class="image-placeholder">
@@ -118,7 +108,6 @@
         </div>
       </div>
 
-      <!-- LAYOUT VIEWER -->
       <div class="comparison-row">
         <div class="comparison-col ma3 tab-content active">
           <div class="image-placeholder">
@@ -140,15 +129,45 @@
       </div>
     </section>
 
+    <section class="comparison-card">
+      <div class="comparison-header">
+        <div class="brand ma3">grandMA3</div>
+        <div class="brand vs">Quailty</div>
+        <div class="brand vista">Vista</div>
+      </div>
+
+      <div class="comparison-row">
+        <div class="comparison-col ma3 tab-content active">
+          <div class="image-placeholder">
+            <a href="Images/new/aboveall/maf.webp">
+              <img src="Images/new/aboveall/maf.webp" alt="grandMA3 Console Hardware">
+            </a>
+          </div>
+          <div class="caption">
+            grandMA3 consoles provide a significantly nicer quality experience. The physical touch and tactile feel of the motorized faders and buttons are superior, paired with industry-leading processing speed for instantaneous feedback.
+          </div>
+        </div>
+
+        <div class="comparison-col vista tab-content">
+          <div class="image-placeholder">
+            <a href="Images/new/vistaf.jpg">
+              <img src="Images/new/aboveall/vistaf.webp" alt="Vista Console Hardware">
+            </a>
+          </div>
+          <div class="caption">
+            In comparison, Vista hardware often lacks the premium tactile response found in MA3. The surface feel and overall command speed are not as refined, making it less ideal for high-pressure professional environments.
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- LIGHTBOX -->
   <div id="lightbox">
     <span class="close">&times;</span>
     <img src="" alt="Lightbox Image">
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 grandMA3: Lighting Made Simple. All rights reserved.</p>
     <div class="social-links">
@@ -157,7 +176,6 @@
     </div>
   </footer>
 
-  <!-- JS FOR TABS -->
   <script>
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
@@ -165,10 +183,8 @@
     tabButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         const target = btn.dataset.tab;
-
         tabButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
         tabContents.forEach(content => {
           if(content.classList.contains(target)){
             content.classList.add('active');
@@ -179,7 +195,6 @@
       });
     });
 
-    // ================= LIGHTBOX =================
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = lightbox.querySelector('img');
     const closeBtn = lightbox.querySelector('.close');
@@ -194,7 +209,6 @@
 
     closeBtn.onclick = () => { lightbox.style.display = 'none'; }
     lightbox.onclick = e => { if(e.target !== lightboxImg) lightbox.style.display = 'none'; }
-
   </script>
 
 </body>
