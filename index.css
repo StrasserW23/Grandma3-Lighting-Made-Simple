@@ -17,41 +17,43 @@ a {
   color: #333;
 }
 
-/* ===================== HERO SECTION ===================== */
 .hero {
-  background: url("Images/BackGround.png") no-repeat center center/cover;
+  background: url("Images/BackGround.png") no-repeat center / cover;
   height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   text-align: center;
+  color: white;
   position: relative;
+  overflow: hidden;
 }
+
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.5);
-  z-index: 0;
 }
+
 .hero h1 {
   position: relative;
   z-index: 1;
   font-size: 4.5rem;
-  letter-spacing: 3px;
   margin: 0;
+  letter-spacing: 3px;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
-/* ===================== FADE-IN ===================== */
+/* HERO ANIMATION */
 .fade-in {
   opacity: 0;
   animation: fadeIn 2.5s ease forwards;
 }
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(30px);}
+  to   { opacity: 1; transform: translateY(0);}
 }
 
 /* ===================== NAVIGATION ===================== */
