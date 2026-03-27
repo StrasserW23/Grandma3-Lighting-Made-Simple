@@ -5,8 +5,8 @@ body {
   font-size: 1.25rem;
   color: #333;
   scroll-padding-top: 80px;
-  background-color: antiquewhite;
-  background-image: url(Images/gradient.jpg);
+  background-color: #f2f2f2; /* History/Compare Match */
+  background-image: url("Images/gradient.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -17,14 +17,15 @@ a {
   color: #333;
 }
 
+/* ===================== HERO SECTION ===================== */
 .hero {
-  background: url("Images/BackGround.png") no-repeat center / cover;
+  background: url("Images/BackGround.png") no-repeat center center/cover;
   height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   color: white;
+  text-align: center;
   position: relative;
   overflow: hidden;
 }
@@ -34,26 +35,27 @@ a {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.5);
+  z-index: 0;
 }
 
 .hero h1 {
   position: relative;
   z-index: 1;
   font-size: 4.5rem;
-  margin: 0;
   letter-spacing: 3px;
+  margin: 0;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  /* No auto-caps */
 }
 
-/* HERO ANIMATION */
+/* ===================== FADE-IN ===================== */
 .fade-in {
   opacity: 0;
   animation: fadeIn 2.5s ease forwards;
 }
-
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px);}
-  to   { opacity: 1; transform: translateY(0);}
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ===================== NAVIGATION ===================== */
@@ -65,15 +67,16 @@ nav {
   z-index: 1000;
   box-shadow: 0 4px 10px rgba(0,0,0,0.35);
 }
+
 nav ul {
   list-style: none;
   margin: 0;
-  padding: 0 10px;
+  padding: 0;
   display: flex;
   justify-content: center;
   gap: 40px;
-  flex-wrap: wrap;
 }
+
 nav ul li a {
   color: white;
   font-size: 1.3rem;
@@ -81,12 +84,12 @@ nav ul li a {
   padding: 10px 20px;
   transition: background 0.3s ease, color 0.3s ease;
 }
-nav ul li a:hover {
-  background-color: #444;
+
+nav ul li a:hover,
+nav ul li a.active {
   border-radius: 6px;
   color: #ffd700;
 }
-nav ul li a.active { color: #ffd700; }
 
 /* ===================== SHOWCASE ===================== */
 .showcase-wrapper {
@@ -94,39 +97,49 @@ nav ul li a.active { color: #ffd700; }
   justify-content: center;
   padding: 40px 15px;
 }
+
 .showcase-box {
   background-color: #fff;
-  padding: 30px 40px;
+  padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   max-width: 1000px;
   width: 100%;
-  transition: transform 0.3s ease;
 }
-.showcase-box:hover { transform: translateY(-5px); }
-.showcase-box h1, .showcase-box h2 { text-align: center; margin-bottom: 15px; }
-.showcase-box p { text-align: left; margin-bottom: 20px; }
+
+.showcase-box h1, .showcase-box h2 { text-align: center; margin-bottom: 20px; }
+.showcase-box p { text-align: left; margin-bottom: 20px; line-height: 1.6; }
 .discover-items { text-align: center; font-size: 1.2rem; margin-top: 20px; line-height: 2; }
 
-/* ===================== GALLERY ===================== */
-.container { padding: 40px 20px; text-align: center; }
+/* ===================== GALLERY (Fixed Same-Size Row) ===================== */
+.container { 
+  max-width: 1400px; 
+  margin: 0 auto;
+  padding: 40px 20px; 
+}
+
 .homepage-gallery {
   display: flex;
   justify-content: center;
   gap: 30px;
   padding: 50px 0;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Forces one line on computer */
 }
+
 .homepage-gallery img {
-  width: 450px;
-  height: 280px;
-  object-fit: cover;
+  /* This forces all images to be exactly the same size */
+  width: 400px; 
+  height: 280px; 
+  object-fit: cover; /* Prevents stretching */
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
   cursor: pointer;
 }
-.homepage-gallery img:hover { transform: scale(1.05); }
+
+.homepage-gallery img:hover {
+  transform: scale(1.05);
+}
 
 /* ===================== FOOTER ===================== */
 footer {
@@ -136,120 +149,79 @@ footer {
   padding: 25px 15px;
   margin-top: 40px;
 }
+
 footer p { margin: 0 0 15px; font-size: 1.1rem; }
+
 .social-links {
   display: flex;
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap;
 }
+
 .social-links a {
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
   transition: color 0.3s ease;
 }
+
 .social-links a:hover { color: #ffd700; }
 
+/* ===================== TABLET & IPHONE RESPONSIVENESS ===================== */
 
-/* ===================== RESPONSIVE LAYOUT (MEDIA QUERIES) ===================== */
-
-/* --- TABLETS & SMALL LAPTOPS (iPad Pro/Air) --- */
+/* Tablet (iPad) */
 @media (max-width: 1024px) {
-  .hero { 
-    height: 50vh; 
-  }
+  .hero h1 { font-size: 3.5rem; }
+  nav ul { gap: 20px; }
   
-  .hero h1 { 
-    font-size: 3.5rem; 
-    letter-spacing: 2px; 
+  .homepage-gallery { 
+    flex-wrap: wrap; /* Allows images to move to the next row on tablets */
   }
-
-  .content-row { 
-    flex-direction: column; /* Stacks text on top of images */
-    gap: 40px; 
-    padding: 0 30px; 
-  }
-
-  .right-images { 
-    flex-direction: row; /* On tablets, images sit side-by-side */
-    justify-content: center; 
-    flex-wrap: wrap; 
-    gap: 25px; 
-  }
-
-  .image-item { 
-    width: 30%; 
-    min-width: 200px; 
+  .homepage-gallery img {
+    width: 45%; /* 2 images per row on tablet */
   }
 }
 
-/* --- MOBILE PHONES (iPhone/Android) --- */
+/* iPhone (Mobile) */
 @media (max-width: 768px) {
-  body { 
-    font-size: 1rem; 
-  }
+  body { font-size: 1rem; }
+  .hero { height: 45vh; }
+  .hero h1 { font-size: 2.2rem; padding: 0 20px; }
 
-  .hero { 
-    height: 40vh; 
-  }
-
-  .hero h1 { 
-    font-size: 2.2rem; 
-    padding: 0 20px; 
-  }
-
-  /* Navigation: Stacks links vertically for easier tapping */
-  nav ul { 
-    flex-direction: column; 
-    gap: 10px; 
-    padding: 10px; 
+  /* Nav stacks vertically just like History/Compare */
+  nav ul {
+    flex-direction: column;
+    gap: 5px;
     align-items: center;
+    padding: 10px 0;
   }
 
-  nav ul li a { 
-    font-size: 1.1rem; 
-    padding: 10px; 
+  nav ul li a {
     display: block;
     width: 100%;
     text-align: center;
+    padding: 12px;
+    font-size: 1.1rem;
   }
 
-  .left-text { 
-    padding: 25px; 
-  }
-
-  .feature-grid { 
-    grid-template-columns: 1fr; /* Force cards into a single column */
-  }
-
-  /* Images: Stack them vertically on small screens */
-  .right-images { 
-    flex-direction: column; 
+  /* Gallery stacks vertically for mobile */
+  .homepage-gallery {
+    flex-direction: column;
     align-items: center;
-    gap: 20px; 
+    gap: 35px;
   }
 
-  .image-item { 
-    width: 90%; 
+  .homepage-gallery img {
+    width: 90%; /* Take up most of the screen width on iPhone */
+    height: 220px; /* Adjust height for mobile */
   }
 
-  .image-item img { 
-    max-height: none; /* Allow images to be full width on mobile */
+  .showcase-box {
+    padding: 25px;
+    margin: 0 10px;
   }
 }
 
-/* --- SMALL PHONES --- */
 @media (max-width: 480px) {
-  .hero h1 { 
-    font-size: 1.8rem; 
-  }
-
-  .intro-lead { 
-    font-size: 1rem; 
-  }
-
-  .image-item { 
-    width: 100%; 
-  }
+  .hero h1 { font-size: 1.8rem; }
 }
