@@ -5,7 +5,7 @@ body {
   font-size: 1.25rem;
   color: #333;
   scroll-padding-top: 80px;
-  background-color: #f2f2f2; /* Matched History background */
+  background-color: antiquewhite;
   background-image: url(Images/gradient.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,7 +17,6 @@ a {
   color: #333;
 }
 
-/* ===================== HERO (Matched) ===================== */
 .hero {
   background: url("Images/BackGround.png") no-repeat center / cover;
   height: 60vh;
@@ -46,6 +45,7 @@ a {
   text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
+/* HERO ANIMATION */
 .fade-in {
   opacity: 0;
   animation: fadeIn 2.5s ease forwards;
@@ -56,7 +56,7 @@ a {
   to   { opacity: 1; transform: translateY(0);}
 }
 
-/* ===================== NAVIGATION (Matched) ===================== */
+/* ===================== NAVIGATION ===================== */
 nav {
   background-color: #222;
   padding: 15px 0;
@@ -65,30 +65,28 @@ nav {
   z-index: 1000;
   box-shadow: 0 4px 10px rgba(0,0,0,0.35);
 }
-
 nav ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 10px;
   display: flex;
   justify-content: center;
   gap: 40px;
+  flex-wrap: wrap;
 }
-
 nav ul li a {
-  text-decoration: none;
   color: white;
   font-size: 1.3rem;
   font-weight: bold;
   padding: 10px 20px;
   transition: background 0.3s ease, color 0.3s ease;
 }
-
-nav ul li a:hover,
-nav ul li a.active {
+nav ul li a:hover {
+  background-color: #444;
   border-radius: 6px;
   color: #ffd700;
 }
+nav ul li a.active { color: #ffd700; }
 
 /* ===================== SHOWCASE ===================== */
 .showcase-wrapper {
@@ -96,70 +94,41 @@ nav ul li a.active {
   justify-content: center;
   padding: 40px 15px;
 }
-
 .showcase-box {
   background-color: #fff;
-  padding: 40px;
+  padding: 30px 40px;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
   max-width: 1000px;
   width: 100%;
   transition: transform 0.3s ease;
 }
+.showcase-box:hover { transform: translateY(-5px); }
+.showcase-box h1, .showcase-box h2 { text-align: center; margin-bottom: 15px; }
+.showcase-box p { text-align: left; margin-bottom: 20px; }
+.discover-items { text-align: center; font-size: 1.2rem; margin-top: 20px; line-height: 2; }
 
-.showcase-box h1, .showcase-box h2 { text-align: center; margin-bottom: 20px; }
-.showcase-box p { line-height: 1.6; margin-bottom: 20px; }
-
-/* ===================== GALLERY (History Style) ===================== */
+/* ===================== GALLERY ===================== */
 .container { padding: 40px 20px; text-align: center; }
-
 .homepage-gallery {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 30px;
   padding: 50px 0;
   flex-wrap: wrap;
 }
-
-/* Wrapper for History-style pill labels */
-.image-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 450px;
-  width: 100%;
-}
-
 .homepage-gallery img {
-  width: 100%;
+  width: 450px;
   height: 280px;
   object-fit: cover;
   border-radius: 12px;
-  /* Deep shadow match for History page images */
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4); 
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
+.homepage-gallery img:hover { transform: scale(1.05); }
 
-.homepage-gallery img:hover {
-  transform: scale(1.04);
-}
-
-/* Gold Pill Label (Matches History UI) */
-.img-label {
-  margin-top: 15px;
-  background: rgba(0,0,0,0.85);
-  color: #ffd700;
-  padding: 8px 25px;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-/* ===================== FOOTER (Matched) ===================== */
+/* ===================== FOOTER ===================== */
 footer {
   background-color: #222;
   color: white;
@@ -167,56 +136,120 @@ footer {
   padding: 25px 15px;
   margin-top: 40px;
 }
-
 footer p { margin: 0 0 15px; font-size: 1.1rem; }
-
 .social-links {
   display: flex;
   justify-content: center;
   gap: 30px;
+  flex-wrap: wrap;
 }
-
 .social-links a {
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
   transition: color 0.3s ease;
 }
-
 .social-links a:hover { color: #ffd700; }
 
-/* ===================== RESPONSIVE MEDIA ===================== */
 
+/* ===================== RESPONSIVE LAYOUT (MEDIA QUERIES) ===================== */
+
+/* --- TABLETS & SMALL LAPTOPS (iPad Pro/Air) --- */
 @media (max-width: 1024px) {
-  .hero { height: 50vh; }
-  .hero h1 { font-size: 3.5rem; }
-  nav ul { gap: 20px; }
-  .image-item { width: 45%; }
+  .hero { 
+    height: 50vh; 
+  }
+  
+  .hero h1 { 
+    font-size: 3.5rem; 
+    letter-spacing: 2px; 
+  }
+
+  .content-row { 
+    flex-direction: column; /* Stacks text on top of images */
+    gap: 40px; 
+    padding: 0 30px; 
+  }
+
+  .right-images { 
+    flex-direction: row; /* On tablets, images sit side-by-side */
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 25px; 
+  }
+
+  .image-item { 
+    width: 30%; 
+    min-width: 200px; 
+  }
 }
 
+/* --- MOBILE PHONES (iPhone/Android) --- */
 @media (max-width: 768px) {
-  .hero { height: 40vh; }
-  .hero h1 { font-size: 2.2rem; }
-  
-  /* Stack Nav links vertically */
-  nav ul {
-    flex-direction: column;
-    gap: 5px;
+  body { 
+    font-size: 1rem; 
+  }
+
+  .hero { 
+    height: 40vh; 
+  }
+
+  .hero h1 { 
+    font-size: 2.2rem; 
+    padding: 0 20px; 
+  }
+
+  /* Navigation: Stacks links vertically for easier tapping */
+  nav ul { 
+    flex-direction: column; 
+    gap: 10px; 
+    padding: 10px; 
     align-items: center;
   }
-  nav ul li a {
-    font-size: 1.1rem;
-    padding: 10px;
+
+  nav ul li a { 
+    font-size: 1.1rem; 
+    padding: 10px; 
     display: block;
     width: 100%;
     text-align: center;
   }
 
-  /* Stack images vertically */
-  .homepage-gallery { 
-    flex-direction: column; 
-    align-items: center; 
+  .left-text { 
+    padding: 25px; 
   }
-  .image-item { width: 90%; }
-  .homepage-gallery img { height: 220px; }
+
+  .feature-grid { 
+    grid-template-columns: 1fr; /* Force cards into a single column */
+  }
+
+  /* Images: Stack them vertically on small screens */
+  .right-images { 
+    flex-direction: column; 
+    align-items: center;
+    gap: 20px; 
+  }
+
+  .image-item { 
+    width: 90%; 
+  }
+
+  .image-item img { 
+    max-height: none; /* Allow images to be full width on mobile */
+  }
+}
+
+/* --- SMALL PHONES --- */
+@media (max-width: 480px) {
+  .hero h1 { 
+    font-size: 1.8rem; 
+  }
+
+  .intro-lead { 
+    font-size: 1rem; 
+  }
+
+  .image-item { 
+    width: 100%; 
+  }
 }
