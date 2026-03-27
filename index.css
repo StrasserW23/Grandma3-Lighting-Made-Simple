@@ -152,69 +152,44 @@ footer p { margin: 0 0 15px; font-size: 1.1rem; }
 .social-links a:hover { color: #ffd700; }
 
 
-/* ===================== TABLET LAYOUT (iPad) ===================== */
+/* ===================== RESPONSIVE / TABLET / MOBILE ===================== */
 @media (max-width: 1024px) {
-  /* Scale down the title */
-  .hero h1 { 
-    font-size: 3.5rem; 
-  }
+  .hero { height: 50vh; }
+  .hero h1 { font-size: 3rem; letter-spacing: 2px; }
+  nav ul { gap: 25px; }
+  nav ul li a { font-size: 1.1rem; padding: 8px 16px; }
   
-  /* Stack the text on top of the images */
-  .content-row { 
-    flex-direction: column; 
-    gap: 30px;
-  }
-
-  /* Make images sit side-by-side on tablet instead of a vertical list */
-  .right-images { 
-    flex-direction: row; 
-    gap: 20px;
-  }
-
-  .image-item { 
-    flex: 1; 
-  }
+  .content-row { flex-direction: column; gap: 40px; padding: 0 30px; }
+  .left-text { padding: 35px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  
+  .right-images { flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 25px; }
+  .image-item { width: 30%; min-width: 200px; }
+  .image-item img { max-height: 180px; }
 }
 
-/* ===================== MOBILE LAYOUT (iPhone) ===================== */
 @media (max-width: 768px) {
-  /* Smaller header area */
-  .hero { 
-    height: 40vh; 
-  }
-
-  .hero h1 { 
-    font-size: 2.2rem; 
-  }
+  body { font-size: 1rem; }
+  .hero { height: 40vh; }
+  .hero h1 { font-size: 2.2rem; padding: 0 20px; }
   
-  /* Stack Nav links vertically for thumb-tapping */
-  nav ul { 
-    flex-direction: column; 
-    gap: 5px; 
-    align-items: center; 
-  }
-
-  nav ul li a { 
-    font-size: 1.1rem; 
-    padding: 10px; 
-    display: block; 
-    width: 100%; 
-  }
-
-  /* Force everything into a single column */
-  .feature-grid { 
-    grid-template-columns: 1fr; 
-  }
-
-  .right-images { 
-    flex-direction: column; 
-  }
+  /* Stack Nav links vertically */
+  nav ul { flex-direction: column; gap: 5px; align-items: center; padding: 10px; }
+  nav ul li a { font-size: 1.1rem; padding: 10px; display: block; width: 100%; text-align: center; }
   
-  .left-text { 
-    padding: 25px; 
-  }
+  .content-row { padding: 0 15px; gap: 30px; }
+  .left-text { padding: 25px; }
+  .intro-lead { font-size: 1.1rem; }
+  
+  /* Horizontal scroll for images on mobile (Matched to History) */
+  .right-images { flex-direction: row; overflow-x: auto; gap: 15px; padding-bottom: 10px; align-items: flex-start; }
+  .image-item { min-width: 240px; width: auto; }
+  .image-item img { max-height: 150px; }
+}
 
-  .band-hero.in-action { 
-    font-size: 2rem; 
-  }
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.8rem; }
+  .left-text { padding: 20px; }
+  .intro-lead { font-size: 1rem; }
+  .image-item { min-width: 200px; }
 }

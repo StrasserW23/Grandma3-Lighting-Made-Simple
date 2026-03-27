@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>grandMA3 vs Vista</title>
   <link rel="stylesheet" href="compare.css">
 </head>
@@ -132,7 +133,7 @@
     <section class="comparison-card">
       <div class="comparison-header">
         <div class="brand ma3">grandMA3</div>
-        <div class="brand vs">Quailty</div>
+        <div class="brand vs">Quality</div>
         <div class="brand vista">Vista</div>
       </div>
 
@@ -144,18 +145,18 @@
             </a>
           </div>
           <div class="caption">
-            grandMA3 consoles provide a significantly nicer quality experience. The physical touch and tactile feel of the motorized faders and buttons are superior, paired with industry-leading processing speed for instantaneous feedback.
+            grandMA3 consoles provide a significantly nicer quality experience. The physical touch and tactile feel of the motorized faders and buttons are superior.
           </div>
         </div>
 
         <div class="comparison-col vista tab-content">
           <div class="image-placeholder">
-            <a href="Images/new/vistaf.jpg">
+            <a href="Images/new/aboveall/vistaf.webp">
               <img src="Images/new/aboveall/vistaf.webp" alt="Vista Console Hardware">
             </a>
           </div>
           <div class="caption">
-            In comparison, Vista hardware often lacks the premium tactile response found in MA3. The surface feel and overall command speed are not as refined, making it less ideal for high-pressure professional environments.
+            In comparison, Vista hardware often lacks the premium tactile response found in MA3. Surface feel and command speed are not as refined.
           </div>
         </div>
       </div>
@@ -177,6 +178,7 @@
   </footer>
 
   <script>
+    // Tab Switching Logic
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
 
@@ -195,6 +197,7 @@
       });
     });
 
+    // Lightbox Logic
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = lightbox.querySelector('img');
     const closeBtn = lightbox.querySelector('.close');
