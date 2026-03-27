@@ -152,44 +152,52 @@ footer p { margin: 0 0 15px; font-size: 1.1rem; }
 .social-links a:hover { color: #ffd700; }
 
 
-/* ===================== RESPONSIVE / TABLET / MOBILE ===================== */
+/* ===================== RESPONSIVE MEDIA ===================== */
+
+/* Tablet Layout */
 @media (max-width: 1024px) {
   .hero { height: 50vh; }
-  .hero h1 { font-size: 3rem; letter-spacing: 2px; }
+  .hero h1 { font-size: 3.5rem; letter-spacing: 2px; }
+  
   nav ul { gap: 25px; }
   nav ul li a { font-size: 1.1rem; padding: 8px 16px; }
-  
-  .content-row { flex-direction: column; gap: 40px; padding: 0 30px; }
-  .left-text { padding: 35px; }
-  .feature-grid { grid-template-columns: 1fr; }
-  
-  .right-images { flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 25px; }
-  .image-item { width: 30%; min-width: 200px; }
-  .image-item img { max-height: 180px; }
+
+  .homepage-gallery { gap: 25px; }
+  .image-item { width: 45%; }
+  .homepage-gallery img { height: 220px; }
 }
 
+/* Mobile Layout */
 @media (max-width: 768px) {
   body { font-size: 1rem; }
   .hero { height: 40vh; }
   .hero h1 { font-size: 2.2rem; padding: 0 20px; }
   
-  /* Stack Nav links vertically */
-  nav ul { flex-direction: column; gap: 5px; align-items: center; padding: 10px; }
-  nav ul li a { font-size: 1.1rem; padding: 10px; display: block; width: 100%; text-align: center; }
-  
-  .content-row { padding: 0 15px; gap: 30px; }
-  .left-text { padding: 25px; }
-  .intro-lead { font-size: 1.1rem; }
-  
-  /* Horizontal scroll for images on mobile (Matched to History) */
-  .right-images { flex-direction: row; overflow-x: auto; gap: 15px; padding-bottom: 10px; align-items: flex-start; }
-  .image-item { min-width: 240px; width: auto; }
-  .image-item img { max-height: 150px; }
+  /* Stack Nav links vertically matching History style */
+  nav ul {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    padding: 10px;
+  }
+  nav ul li a {
+    font-size: 1.1rem;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Stack images vertically */
+  .homepage-gallery { 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 35px;
+  }
+  .image-item { width: 90%; }
+  .homepage-gallery img { height: 200px; }
 }
 
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.8rem; }
-  .left-text { padding: 20px; }
-  .intro-lead { font-size: 1rem; }
-  .image-item { min-width: 200px; }
 }
