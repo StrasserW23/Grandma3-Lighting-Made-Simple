@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>grandMA3: In Action</title>
-  <link rel="stylesheet" href="inaction.css?v=1.1">
+  <link rel="stylesheet" href="inaction.css?v=1.2">
 </head>
 <body>
 
@@ -32,13 +32,13 @@
         <div class="feature-grid">
           <div class="feature-item">
             <h3>Fly-Outs & Circles</h3>
-            <p><strong>Fly-Out:</strong> Fast movements from center to audience. Typically a one-shot movement effect.</p>
+            <p><strong>Fly-Out:</strong> Fast movements from center to audience, creating energy. Typically a one-shot movement effect.</p>
             <p><strong>Circles:</strong> Continuous circular motion using Sine/Cosine waves for a clean, predictable flow.</p>
           </div>
           <div class="feature-item">
             <h3>Movement & Dimmer</h3>
             <p><strong>Figure 8s:</strong> Dynamic looping motion created via X/Y phase offsets. Ideal for mid-tempo flow.</p>
-            <p><strong>Dimus:</strong> Rhythmic brightness control (pulsing, strobing) using Speed Masters.</p>
+            <p><strong>Dimus:</strong> Rhythmic brightness control (pulsing, strobing) using Speed Masters for precise timing.</p>
           </div>
         </div>
       </div>
@@ -62,6 +62,46 @@
       </div>
     </section>
 
+    <section class="content-row">
+      <div class="left-text">
+        <h2>Gobo Control</h2>
+        <p class="intro-lead">Gobos project patterns and textures. In grandMA3, these are controlled digitally via attribute encoders.</p>
+        <hr class="section-divider">
+        <div class="feature-grid">
+          <div class="feature-item">
+            <h3>Core Attributes</h3>
+            <ul class="reflow-list">
+              <li><strong>Selection:</strong> Choose the active pattern from the wheel.</li>
+              <li><strong>Rotation:</strong> Continuous spinning of the disc.</li>
+              <li><strong>Indexing:</strong> Locking the pattern at a specific static angle.</li>
+            </ul>
+          </div>
+          <div class="feature-item">
+            <h3>Advanced Texture</h3>
+            <ul class="reflow-list">
+              <li><strong>Gobo Shake:</strong> Adds a vibration or shimmer to the light.</li>
+              <li><strong>Gobo Morph:</strong> Transitions between two gobo wheels.</li>
+            </ul>
+            <div class="tech-specs">
+              <h4>Note:</h4>
+              <p>These controls are located within the fixture's <strong>Beam</strong> attribute encoder pages.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-images">
+        <div class="image-item">
+          <img src="Images/new/aboveall/newgobo.png" alt="Gobo pattern" class="img-placeholder">
+          <span class="img-label">Pattern Selection</span>
+        </div>
+        <div class="image-item">
+          <img src="Images/new/GoboL.png" alt="Gobo look" class="img-placeholder">
+          <span class="img-label">Visual Indexing</span>
+        </div>
+      </div>
+    </section>
+
     <section class="band-section">
       <div class="band-content-wrapper">
         <div class="band-hero in-action">LIVE</div>
@@ -81,6 +121,11 @@
 
   </main>
 
+  <div id="image-lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
   <footer>
     <p>&copy; 2026 grandMA3: Lighting Made Simple. All rights reserved.</p>
     <div class="social-links">
@@ -90,6 +135,7 @@
   </footer>
 
   <script>
+    // YouTube Loader
     function loadYouTubeVideo(container, videoId) {
       const iframe = document.createElement('iframe');
       iframe.width = "100%";
@@ -102,6 +148,28 @@
       container.innerHTML = "";
       container.appendChild(iframe);
     }
+
+    // Lightbox Logic
+    document.addEventListener("DOMContentLoaded", () => {
+      const lightbox = document.getElementById("image-lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const closeBtn = document.querySelector(".lightbox-close");
+      
+      // Select all static images (img-placeholder) for the lightbox
+      const images = document.querySelectorAll(".img-placeholder");
+
+      images.forEach(img => {
+        img.addEventListener("click", () => {
+          lightbox.style.display = "flex";
+          lightboxImg.src = img.src;
+        });
+      });
+
+      closeBtn.onclick = () => lightbox.style.display = "none";
+      lightbox.onclick = (e) => {
+        if (e.target !== lightboxImg) lightbox.style.display = "none";
+      };
+    });
   </script>
 
 </body>
