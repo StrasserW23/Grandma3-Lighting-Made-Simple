@@ -42,7 +42,6 @@ body {
   text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
-/* HERO ANIMATION */
 .fade-in {
   opacity: 0;
   animation: fadeIn 2.5s ease forwards;
@@ -53,7 +52,7 @@ body {
   to   { opacity: 1; transform: translateY(0);}
 }
 
-/* NAVIGATION */
+/* ===================== NAVIGATION ===================== */
 nav {
   background-color: #222;
   padding: 15px 0;
@@ -87,10 +86,10 @@ nav ul li a.active {
   color: #ffd700;
 }
 
-/* CONTENT LAYOUT */
+/* ===================== CONTENT LAYOUT (DESKTOP) ===================== */
 .content-row {
   display: flex;
-  align-items: stretch;
+  align-items: stretch; /* Forces both columns to be equal height */
   gap: 60px;
   max-width: 1200px;
   margin: 40px auto;
@@ -98,7 +97,7 @@ nav ul li a.active {
 }
 
 .left-text {
-  flex: 2;
+  flex: 2; /* Takes up more space than the images */
   background: white;
   padding: 40px;
   border-radius: 12px;
@@ -106,7 +105,52 @@ nav ul li a.active {
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
-/* TEXT CONTENT */
+/* ===================== RIGHT SIDE IMAGES ===================== */
+.right-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* Distributes images evenly from top to bottom */
+  justify-content: space-between; 
+  gap: 30px; 
+}
+
+.image-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.image-item img {
+  width: 100%;
+  max-width: 400px; /* Adjust based on your image resolution */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.image-item img:hover {
+  transform: scale(1.05);
+}
+
+.img-label {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ffd700;
+  background: rgba(0,0,0,0.85);
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* ===================== TEXT STYLING ===================== */
 .intro-lead {
   font-size: 1.4rem;
   color: #444;
@@ -134,11 +178,6 @@ nav ul li a.active {
   margin: 10px 0;
 }
 
-.feature-item ul {
-  padding-left: 20px;
-  margin-top: 10px;
-}
-
 .feature-item li {
   margin-bottom: 8px;
   font-size: 1.15rem;
@@ -151,57 +190,9 @@ nav ul li a.active {
   border-radius: 8px;
   padding: 15px;
   margin-top: 15px;
-  font-size: 1.1rem;
 }
 
-.tech-specs h4 {
-  margin: 0 0 10px;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  color: #888;
-}
-
-/* RIGHT SIDE IMAGES */
-.right-images {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.image-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.image-item img {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-
-.image-item img:hover {
-  transform: scale(1.05);
-}
-
-.img-label {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 8px 20px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #ffd700;
-  background: rgba(0,0,0,0.85);
-  border-radius: 25px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-/* FOOTER */
+/* ===================== FOOTER ===================== */
 footer {
   background-color: #222;
   color: white;
@@ -214,7 +205,6 @@ footer {
   display: flex;
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap;
 }
 
 .social-links a {
@@ -225,6 +215,46 @@ footer {
 
 .social-links a:hover {
   color: #ffd700;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero { height: 50vh; }
+  .hero h1 { font-size: 3rem; letter-spacing: 2px; }
+  nav ul { gap: 25px; }
+  nav ul li a { font-size: 1.1rem; padding: 8px 16px; }
+  .content-row { flex-direction: column; gap: 40px; padding: 0 30px; }
+  .left-text { padding: 35px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .right-images { flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 25px; }
+  .image-item { width: 30%; min-width: 200px; }
+  .image-item img { max-height: 180px; }
+}
+
+@media (max-width: 768px) {
+  body { font-size: 1rem; }
+  .hero { height: 40vh; }
+  .hero h1 { font-size: 2.2rem; padding: 0 20px; }
+  nav ul { flex-wrap: wrap; gap: 10px; padding: 10px; }
+  nav ul li a { font-size: 0.95rem; padding: 6px 10px; }
+  .content-row { padding: 0 15px; gap: 30px; }
+  .left-text { padding: 25px; }
+  .intro-lead { font-size: 1.1rem; }
+  .feature-item li { font-size: 1rem; }
+  .tech-specs { font-size: 1rem; }
+  .right-images { flex-direction: row; overflow-x: auto; gap: 15px; padding-bottom: 10px; }
+  .image-item { min-width: 240px; }
+  .image-item img { max-height: 150px; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.8rem; }
+  nav ul { gap: 6px; }
+  nav ul li a { font-size: 0.85rem; }
+  .left-text { padding: 20px; }
+  .intro-lead { font-size: 1rem; }
+  .image-item { min-width: 200px; }
 }
 
 /* ===================== TABLET & IPHONE RESPONSIVENESS ===================== */
