@@ -161,10 +161,88 @@ footer {
   cursor: pointer;
 }
 
-/* MOBILE FIX */
+/* ===================== UNIVERSAL CONSISTENCY (Hero, Nav, Footer) ===================== */
+
+/* TABLET (iPad) */
+@media (max-width: 1024px) {
+  .hero h1 { font-size: 3.5rem; }
+  
+  nav ul { gap: 20px; }
+  
+  .container { padding: 40px 20px; }
+}
+
+/* MOBILE (iPhone) */
+@media (max-width: 768px) {
+  .hero { height: 40vh; }
+  .hero h1 { font-size: 2.2rem; padding: 0 15px; }
+
+  /* Universal Nav Stack */
+  nav ul {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+  nav ul li a {
+    font-size: 1.1rem;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  footer { padding: 30px 15px; }
+}
+
+/* ===================== PAGE-SPECIFIC MOBILE FIXES (Compare) ===================== */
+
 @media (max-width: 850px) {
-  .compare-tabs { display: flex; }
-  .comparison-row { grid-template-columns: 1fr; }
-  .tab-content { display: none; }
-  .tab-content.active { display: block; }
+  /* Show the toggle buttons for grandMA3 vs Vista */
+  .compare-tabs { 
+    display: flex; 
+    margin-top: 20px;
+  }
+
+  /* Adjust the Comparison Header for Mobile */
+  .comparison-header {
+    grid-template-columns: 1fr; /* Stack "Workspace/Patching" titles */
+  }
+
+  .brand.vs {
+    background: #ffd700;
+    color: #000;
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+  /* Hide the brand names inside the header on mobile to save space, 
+     since the Tabs already tell us which one we are looking at. */
+  .brand.ma3, .brand.vista {
+    display: none; 
+  }
+
+  /* Force rows to be a single column stack */
+  .comparison-row {
+    grid-template-columns: 1fr;
+    border: none;
+  }
+
+  /* Hide content that isn't active in the tabs */
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+  }
+
+  .comparison-col {
+    padding: 20px;
+  }
+
+  .caption {
+    font-size: 1.1rem;
+    text-align: center; /* Better flow for mobile reading */
+  }
 }

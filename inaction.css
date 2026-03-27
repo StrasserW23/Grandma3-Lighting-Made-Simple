@@ -228,3 +228,89 @@ footer {
   font-size: 3rem;
   cursor: pointer;
 }
+
+/* ===================== TABLET LAYOUT (iPad) ===================== */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 3.5rem; /* Consistent scaling */
+  }
+
+  .content-row {
+    flex-direction: column; /* Stacks the text cards on top of the videos */
+    gap: 30px;
+  }
+
+  .right-images {
+    flex-direction: row; /* Side-by-side videos/images on tablet */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .image-item {
+    flex: 1;
+    min-width: 300px;
+  }
+}
+
+/* ===================== MOBILE LAYOUT (iPhone) ===================== */
+@media (max-width: 768px) {
+  /* Consistency: Hero & Nav */
+  .hero {
+    height: 40vh;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    padding: 0 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+
+  nav ul li a {
+    font-size: 1.1rem;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Page Specific: Content Stacking */
+  .left-text {
+    padding: 25px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr; /* Stacks Fly-outs/Circles vertically */
+    gap: 20px;
+  }
+
+  .right-images {
+    flex-direction: column; /* Stack videos vertically for easier viewing */
+  }
+
+  .image-item {
+    width: 100%;
+  }
+
+  /* Band Section Adjustments */
+  .band-hero.in-action {
+    font-size: 1.8rem;
+  }
+
+  .band-content-wrapper {
+    padding: 20px;
+  }
+
+  /* Footer Consistency */
+  footer {
+    padding: 30px 15px;
+  }
+
+  .social-links {
+    gap: 20px;
+  }
+}

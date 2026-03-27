@@ -150,3 +150,71 @@ footer p { margin: 0 0 15px; font-size: 1.1rem; }
   transition: color 0.3s ease;
 }
 .social-links a:hover { color: #ffd700; }
+
+
+/* ===================== TABLET LAYOUT (iPad) ===================== */
+@media (max-width: 1024px) {
+  /* Scale down the title */
+  .hero h1 { 
+    font-size: 3.5rem; 
+  }
+  
+  /* Stack the text on top of the images */
+  .content-row { 
+    flex-direction: column; 
+    gap: 30px;
+  }
+
+  /* Make images sit side-by-side on tablet instead of a vertical list */
+  .right-images { 
+    flex-direction: row; 
+    gap: 20px;
+  }
+
+  .image-item { 
+    flex: 1; 
+  }
+}
+
+/* ===================== MOBILE LAYOUT (iPhone) ===================== */
+@media (max-width: 768px) {
+  /* Smaller header area */
+  .hero { 
+    height: 40vh; 
+  }
+
+  .hero h1 { 
+    font-size: 2.2rem; 
+  }
+  
+  /* Stack Nav links vertically for thumb-tapping */
+  nav ul { 
+    flex-direction: column; 
+    gap: 5px; 
+    align-items: center; 
+  }
+
+  nav ul li a { 
+    font-size: 1.1rem; 
+    padding: 10px; 
+    display: block; 
+    width: 100%; 
+  }
+
+  /* Force everything into a single column */
+  .feature-grid { 
+    grid-template-columns: 1fr; 
+  }
+
+  .right-images { 
+    flex-direction: column; 
+  }
+  
+  .left-text { 
+    padding: 25px; 
+  }
+
+  .band-hero.in-action { 
+    font-size: 2rem; 
+  }
+}

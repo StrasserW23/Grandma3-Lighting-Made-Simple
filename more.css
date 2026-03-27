@@ -222,3 +222,87 @@ footer p { margin: 0 0 15px; font-size: 1.1rem; }
   transition: color 0.3s ease;
 }
 .social-links a:hover { color: #ffd700; }
+
+
+/* ===================== TABLET LAYOUT (iPad) ===================== */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 3.5rem; /* Matches all other pages */
+  }
+
+  .container {
+    max-width: 90%; /* Gives the content more breathing room */
+  }
+
+  .band-hero {
+    font-size: 2.8rem; /* Slightly smaller to prevent text clipping */
+    height: 140px;
+  }
+}
+
+/* ===================== MOBILE LAYOUT (iPhone) ===================== */
+@media (max-width: 768px) {
+  /* Hero & Nav Consistency */
+  .hero {
+    height: 40vh;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    padding: 0 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+
+  nav ul li a {
+    font-size: 1.1rem;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Content Fixes */
+  .container {
+    margin: 20px auto;
+    gap: 30px;
+  }
+
+  .intro, .Ending {
+    padding: 25px;
+    font-size: 1.1rem;
+    text-align: center; /* Center-aligned text often looks better on mobile */
+  }
+
+  .band-hero {
+    font-size: 1.8rem; /* Fits names like "Trans-Siberian Orchestra" on one line */
+    height: 100px;
+  }
+
+  .band-content {
+    padding: 20px;
+  }
+
+  /* Grid Fix: Force images to stack nicely */
+  .band-images {
+    grid-template-columns: 1fr; /* One large image per row on phones */
+    gap: 20px;
+  }
+
+  .band-images img {
+    height: 250px; /* Gives them a consistent look while scrolling */
+  }
+
+  /* Footer Consistency */
+  footer {
+    padding: 30px 10px;
+  }
+
+  .social-links {
+    gap: 20px;
+  }
+}

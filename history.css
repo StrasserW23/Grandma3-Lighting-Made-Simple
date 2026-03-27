@@ -227,3 +227,95 @@ footer {
   color: #ffd700;
 }
 
+/* ===================== UPDATED CONTENT LAYOUT ===================== */
+/* This forces the text to be on top and images on bottom */
+.content-row {
+  display: flex;
+  flex-direction: column; 
+  gap: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.left-text {
+  width: 100%;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-sizing: border-box;
+}
+
+/* ===================== REORGANIZED IMAGE ROW ===================== */
+.right-images {
+  display: flex;
+  flex-direction: row;        /* Horizontal line */
+  justify-content: center;    /* Center the row */
+  gap: 25px;                 /* Space between images */
+  width: 100%;
+}
+
+.image-item {
+  flex: 0 1 250px;           /* Sets a base width of 250px for each */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-item img {
+  width: 100%;               /* Fits the 250px container */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.image-item img:hover {
+  transform: scale(1.05);
+}
+
+/* ===================== TABLET & IPHONE RESPONSIVENESS ===================== */
+
+/* iPad Layout */
+@media (max-width: 1024px) {
+  .hero h1 { font-size: 3.5rem; }
+  
+  .right-images {
+    flex-wrap: wrap;         /* Allows them to drop to a second row if needed */
+  }
+}
+
+/* iPhone Layout */
+@media (max-width: 768px) {
+  .hero { height: 40vh; }
+  .hero h1 { font-size: 2.2rem; }
+
+  /* Stack Nav links vertically */
+  nav ul {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+  nav ul li a {
+    font-size: 1.1rem;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Stack images vertically on small phones */
+  .right-images {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image-item {
+    width: 90%;             /* Larger on phone screens */
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr; /* Single column for history cards */
+  }
+}
