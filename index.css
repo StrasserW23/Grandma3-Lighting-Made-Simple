@@ -5,12 +5,15 @@ body {
   font-size: 1.25rem;
   color: #333;
   scroll-padding-top: 80px;
-  background-color: #f2f2f2; /* History/Compare Match */
+  background-color: #f2f2f2; 
   background-image: url("Images/gradient.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
+
+* { box-sizing: border-box; }
+html, body { max-width: 100%; overflow-x: hidden; }
 
 a {
   text-decoration: none;
@@ -19,36 +22,30 @@ a {
 
 /* ===================== HERO SECTION ===================== */
 .hero {
-  background: url("Images/BackGround.png") no-repeat center center/cover;
+  background: url("Images/BackGround.png") no-repeat center / cover;
   height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   text-align: center;
+  color: white;
   position: relative;
-  overflow: hidden;
 }
-
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.5);
-  z-index: 0;
 }
-
 .hero h1 {
   position: relative;
   z-index: 1;
   font-size: 4.5rem;
-  letter-spacing: 3px;
   margin: 0;
+  letter-spacing: 3px;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-  /* No auto-caps */
 }
 
-/* ===================== FADE-IN ===================== */
 .fade-in {
   opacity: 0;
   animation: fadeIn 2.5s ease forwards;
@@ -58,81 +55,149 @@ a {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ===================== NAVIGATION ===================== */
+/* ===================== NAVIGATION (Perfect History Match) ===================== */
 nav {
   background-color: #222;
-  padding: 15px 0;
+  padding: 20px 0; /* Matched height */
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
-
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 50px; /* Matched spacing */
 }
-
 nav ul li a {
   color: white;
   font-size: 1.3rem;
   font-weight: bold;
-  padding: 10px 20px;
-  transition: background 0.3s ease, color 0.3s ease;
+  padding: 8px 15px;
+  transition: 0.3s ease;
 }
 
+/* Match the exact gold active state from History */
 nav ul li a:hover,
 nav ul li a.active {
-  border-radius: 6px;
   color: #ffd700;
+  background-color: transparent; /* Ensure no background box unless History has it */
 }
 
-/* ===================== SHOWCASE ===================== */
+.h2 {
+  text-align: center;
+}
+/* ===================== MAIN CONTENT ===================== */
 .showcase-wrapper {
   display: flex;
   justify-content: center;
-  padding: 40px 15px;
+  padding: 60px 20px;
 }
-
 .showcase-box {
-  background-color: #fff;
-  padding: 40px;
+  background: white;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  max-width: 1000px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 50px;
+  max-width: 1100px;
   width: 100%;
 }
+.showcase-box h1 { margin-top: 0; text-align: center; }
+.showcase-box p { line-height: 1.8; text-align: left; }
 
-.showcase-box h1, .showcase-box h2 { text-align: center; margin-bottom: 20px; }
-.showcase-box p { text-align: left; margin-bottom: 20px; line-height: 1.6; }
-.discover-items { text-align: center; font-size: 1.2rem; margin-top: 20px; line-height: 2; }
-
-/* ===================== GALLERY (Fixed Same-Size Row) ===================== */
-.container { 
-  max-width: 1400px; 
-  margin: 0 auto;
-  padding: 40px 20px; 
+/* Centers the 📸 Discover: heading */
+.showcase-box h2 {
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
 }
 
+/* Centers the bulleted list of items */
+.discover-items {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+/* Optional: If you want the text paragraph above it centered too */
+.showcase-box p {
+  text-align: center; 
+}
+
+/* ===================== GALLERY (Same Size Row) ===================== */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+  text-align: center;
+}
 .homepage-gallery {
   display: flex;
   justify-content: center;
   gap: 30px;
-  padding: 50px 0;
-  flex-wrap: nowrap; /* Forces one line on computer */
+  flex-wrap: nowrap;
+}
+.homepage-gallery img {
+  width: 400px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease;
+}
+.homepage-gallery img:hover { transform: scale(1.05); }
+
+/* ===================== FOOTER (Perfect History Match) ===================== */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 40px 20px; /* Matched vertical depth */
+  margin-top: 60px;
+}
+footer p {
+  margin: 0 0 20px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.social-links a {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+.social-links a:hover {
+  color: #ffd700;
+}
+
+/* ===================== INDEX MEDIA MATCHING HISTORY ===================== */
+
+/* Standard Desktop Gallery (Forcing Row) */
+.homepage-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px; /* Matched to History right-images gap */
+  padding: 40px 0;
 }
 
 .homepage-gallery img {
-  /* This forces all images to be exactly the same size */
-  width: 400px; 
-  height: 280px; 
-  object-fit: cover; /* Prevents stretching */
+  width: 100%;
+  max-width: 400px; /* Matched to History image constraints */
+  height: 280px; /* Fixed height to force identical sizing */
+  object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -141,87 +206,70 @@ nav ul li a.active {
   transform: scale(1.05);
 }
 
-/* ===================== FOOTER ===================== */
-footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 25px 15px;
-  margin-top: 40px;
-}
-
-footer p { margin: 0 0 15px; font-size: 1.1rem; }
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-.social-links a {
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover { color: #ffd700; }
-
-/* ===================== TABLET & IPHONE RESPONSIVENESS ===================== */
-
-/* Tablet (iPad) */
+/* ===================== TABLET SYNC (iPad) ===================== */
 @media (max-width: 1024px) {
   .hero h1 { font-size: 3.5rem; }
-  nav ul { gap: 20px; }
   
-  .homepage-gallery { 
-    flex-wrap: wrap; /* Allows images to move to the next row on tablets */
+  nav ul { gap: 25px; }
+
+  .homepage-gallery {
+    flex-wrap: wrap; /* Matches History .right-images wrap */
+    justify-content: center;
+    gap: 25px;
   }
+  
   .homepage-gallery img {
-    width: 45%; /* 2 images per row on tablet */
+    width: 45%; /* Shows 2 per row on tablet */
+    height: 220px;
   }
 }
 
-/* iPhone (Mobile) */
+/* ===================== MOBILE SYNC (iPhone) ===================== */
 @media (max-width: 768px) {
-  body { font-size: 1rem; }
-  .hero { height: 45vh; }
-  .hero h1 { font-size: 2.2rem; padding: 0 20px; }
+  .hero { height: 40vh; }
+  .hero h1 { font-size: 2.2rem; }
 
-  /* Nav stacks vertically just like History/Compare */
+  /* Navigation: Exact History Vertical Stack */
   nav ul {
     flex-direction: column;
     gap: 5px;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px;
   }
-
+  
   nav ul li a {
+    font-size: 1.1rem;
+    padding: 10px;
     display: block;
     width: 100%;
     text-align: center;
-    padding: 12px;
-    font-size: 1.1rem;
   }
 
-  /* Gallery stacks vertically for mobile */
+  /* Gallery: Exact History Vertical Column Stack */
   .homepage-gallery {
     flex-direction: column;
     align-items: center;
-    gap: 35px;
+    gap: 30px; /* Matched to History mobile gap */
   }
 
   .homepage-gallery img {
-    width: 90%; /* Take up most of the screen width on iPhone */
-    height: 220px; /* Adjust height for mobile */
+    width: 90%; /* Matches History image width on mobile */
+    height: 250px;
   }
-
-  .showcase-box {
-    padding: 25px;
-    margin: 0 10px;
+  
+  /* Footer Sync */
+  footer {
+    padding: 25px 15px;
+  }
+  
+  .social-links {
+    gap: 30px;
   }
 }
 
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.8rem; }
+  .homepage-gallery img {
+    height: 200px;
+  }
 }
